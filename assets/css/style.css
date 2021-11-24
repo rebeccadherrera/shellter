@@ -9,9 +9,12 @@ body {
     font-size: 25px;
 }
 
+
+/* User location map */
 .user-location-map {
     height: 400px;
     width: 50%;
     border: 3px solid #024e76;
     margin: auto;
 }
+/* end  User location map */
