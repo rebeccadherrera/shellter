@@ -1,14 +1,35 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family:'Josefin Sans', sans-serif;
+  }
+
+.navbar{
+    background-color: #352870; 
+    padding: 20px;
 }
 
+.navbar-item, .navbar-link {
+    color: #fff;
+
+}
+a.navbar-item:hover {
+    background-color: #66C9D7;
+    color: #fff;
+}
+.navbar-menu.is-active{
+    background-color: #352870;
+    color: #fff;
+}
+
+/* HEADER / NAVBAR STYLES END */
 
 /* User location map */
 .user-location-map {
