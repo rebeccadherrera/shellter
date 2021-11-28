@@ -18,3 +18,10 @@ a.navbar-item:hover {
 
 /* HEADER / NAVBAR STYLES END */
 
+.navbar-burger {
+    color: #66C9D7;
+}
+
+.navbar-burger:hover{
+    color: white;
+}

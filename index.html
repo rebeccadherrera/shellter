@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Shellter</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+   <!-- navbar JQuery code -->
+   <script> 
+        $(document).ready(function() {
+
+        // Check for click events on the navbar burger icon
+            $('.navbar-burger').click(function() {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+    
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- header starts -->
@@ -17,28 +31,34 @@
                 <a class="navbar-item" href="">
                     <img src="./assets/images/logo_shellter_white.svg" alt="shellter logo" width="200" height="">
                 </a> 
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
             </div>
             <!-- navbar links -->
-            <div class="navbar-menu is-active">
+            <div class="navbar-menu" id="navMenu">
                 <a class="navbar-item">
                     Home
-                  </a>
-                  <a class="navbar-item">
+                </a>
+                <a class="navbar-item">
                     Search
-                  </a>
-                  <a class="navbar-item">
+                </a>
+                <a class="navbar-item">
                     Resources
-                  </a>
-                  <a class="navbar-item">
+                </a>
+                <a class="navbar-item">
                     Contact
-                  </a>
-              </div>
+                </a>
+            </div>
         </nav>
         
             
-        </navbar>
+        
     </header>
     <!-- header end -->
     
 </body>
+
 </html>
