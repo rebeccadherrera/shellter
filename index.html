@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://www.gstatic.com/external_hosted/handlebars/v4.7.6/handlebars.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -22,6 +23,7 @@
     <script>
       const CONFIGURATION = {
         "locations": [
+          {"title":"Hampton Inn Oneonta","address1":"225 River St","address2":"Oneonta, NY 13820, USA","coords":{"lat":42.44364457680803,"lng":-75.08686156441803},"placeId":"ChIJ02pkXD6M24kRb7cdjhkJl5o"},
           {"title":"236 Edgemere St","address1":"236 Edgemere St","address2":"Montauk, NY 11954, USA","coords":{"lat":41.048357701441496,"lng":-71.94962536508179},"placeId":"ChIJj8K_A7NU74kRcyS0znikFRI"},
           {"title":"1655 County Rd 39","address1":"1655 County Rd 39","address2":"Southampton, NY 11968, USA","coords":{"lat":40.89593366593762,"lng":-72.4538054576721},"placeId":"ChIJ-ei7NTmT6IkR0FrrBKaJH5I"},
           {"title":"110 Vanderbilt Motor Pkwy","address1":"110 Vanderbilt Motor Pkwy","address2":"Brentwood, NY 11717, USA","coords":{"lat":40.80694189156402,"lng":-73.26459543068846},"placeId":"ChIJZUG6gdIx6IkRgFFerSs5Fp0"},
@@ -326,44 +328,55 @@
 
         <Main>
             <!-- user location map -->
-            <div class="user-location-map">
-                <div id="map-container">
-                    <div id="locations-panel">
-                        <div id="locations-panel-list">
-                            <header>
-                                <h1 class="search-title">
-                                    <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
-                                    Find a location near you
-                                </h1>
-                                <div class="search-input">
-                                    <input id="location-search-input" placeholder="Enter your address or zip code">
-                                    <div id="search-overlay-search" class="search-input-overlay search">
-                                        <button id="location-search-button">
-                                            <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
-                                        </button>
-                                    </div>
-                                </div>
-                            </header>
-                            <div class="section-name" id="location-results-section-name">
-                                All locations
-                            </div>
-                            <div class="results">
-                                <ul id="location-results-list"></ul>
-                            </div>
-                        </div>
-                        <div id="locations-panel-details"></div>
-                    </div>
-                    <div id="map"></div>
-                </div>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABCDE" async defer></script>              
+            <div>
+              <div class="user-location-map">
+                  <div id="map-container">
+                      <div id="locations-panel">
+                          <div id="locations-panel-list">
+                              <header>
+                                  <h1 class="search-title">
+                                      <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
+                                      Find a location near you
+                                  </h1>
+                                  <div class="search-input">
+                                      <input id="location-search-input" placeholder="Enter your address or zip code">
+                                      <div id="search-overlay-search" class="search-input-overlay search">
+                                          <button id="location-search-button">
+                                              <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </header>
+                              <div class="section-name" id="location-results-section-name">
+                                  All locations
+                              </div>
+                              <div class="results">
+                                  <ul id="location-results-list"></ul>
+                              </div>
+                          </div>
+                          <div id="locations-panel-details"></div>
+                      </div>
+                      <div id="map"></div>
+                  </div>
+                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABCDE" async defer></script>
+              </div>
+              <button id="Save-Hotel">
+                Save Hotel
+              </button>
+            </div>
+
+            <div class="columns">
+              <div id="card-1" class="column"></div>
+              <div id="card-2" class="column"></div>
+              <div id="card-3" class="column"></div>
+              <div id="card-4" class="column"></div>
             </div>
 
         </Main>
     </div>
 
 
-
-
+  <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
