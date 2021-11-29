@@ -41,9 +41,29 @@ a.navbar-item:hover {
 
 /* User location map */
 .user-location-map {
-    height: 400px;
-    width: 50%;
+    height: 500px;
+    width: 100%;
     border: 3px solid #024e76;
     margin: auto;
+}
+
+#Save-Hotel {
+    border: none;
+    color: white;
+    background-color: blue;
+    width: 100%;
+    padding: 0;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.columns {
+    width: 85%;
+    margin-left: 5%;
+}
+
+.column {
+    background-color: rgb(113, 167, 66);
+    margin-top: 30px;
 }
 /* end  User location map */
