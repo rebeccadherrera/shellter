@@ -1,4 +1,5 @@
 var saveHotelBtn = document.getElementById("Save-Hotel");
+var bottomBorder = document.getElementById("bottom-border");
 
 var hotelList = [];
 var hotel;
@@ -67,8 +68,9 @@ var displayOnCard = function(hotel) {
 
 var hideSaveBtn = function(event) {
   console.log(event);
-  if ($(event.target).hasClass("back-button")) {
+  if ($(event.target).hasClass("back-button") || $(event.target).parent().hasClass("back-button")) {
     saveHotelBtn.style.display = 'none';
+    bottomBorder.style.display = 'block';
   }
 };
 
@@ -77,6 +79,7 @@ var showSaveBtn = function(event) {
   console.log('<button class="details-button"> View details </button>');
   if ($(event.target).hasClass("details-button")) {
     saveHotelBtn.style.display = 'block';
+    bottomBorder.style.display = 'none';
   }
 };
 
