@@ -1,3 +1,5 @@
+const govApi = 'https://data.cityofnewyork.us/resource/drss-6xix.json'
+
 var saveHotelBtn = document.getElementById("Save-Hotel");
 var bottomBorder = document.getElementById("bottom-border");
 
@@ -78,12 +80,28 @@ var showSaveBtn = function(event) {
   console.log(event.target);
   console.log('<button class="details-button"> View details </button>');
   if ($(event.target).hasClass("details-button")) {
-    saveHotelBtn.style.display = 'block';
-    bottomBorder.style.display = 'none';
+      saveHotelBtn.style.display = 'block';
+      bottomBorder.style.display = 'none';
   }
 };
 
+async function getData() {
+  try {
+    const response = await fetch(govApi);
+    const data = await response.json();
+    console.log(data);
+    console.log(data[5].ipv_dirs_19);
+    document.getElementById('total').innerHTML = data[5].ipv_dirs_19;
+  }catch (err) {
+    console.log(err);
+    document.getElementById('total').innerHTML = 'ERROR';
+  }
 
+};
+
+
+
+getData();
 saveHotel();
 
 $("#locations-panel-details").on("click", hideSaveBtn);

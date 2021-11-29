@@ -95,6 +95,14 @@ a.navbar-item:hover {
 }
 /* end  User location map */
 
+/* DESCRIPTION */
+
+.description {
+    text-align: center;
+}
+
+/* END DESCRIPTION */
+
 /* FOOTER */
 
 footer {
