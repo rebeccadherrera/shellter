@@ -5,88 +5,454 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Roboto:wght@300&display=swap"
-        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://www.gstatic.com/external_hosted/handlebars/v4.7.6/handlebars.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="./assets/css/locatorplus.css" rel="stylesheet">
+    <script src="./assets/javascript/locatorplus.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Shellter</title>
+
+
+
+    <!-- From Google documentation Basic Javascript for getting address and displaying hotels -->
+    <script>
+      const CONFIGURATION = {
+        "locations": [
+        {"title":"Montauk Manor","address1":"236 Edgemere St","address2":"Montauk, NY 11954, USA","coords":{"lat":41.04834290677482,"lng":-71.94957463558197},"placeId":"ChIJOf6bBrNU74kRInw3l2vYXCM"},
+          {"title":"The Atlantic","address1":"1655 County Rd 39","address2":"Southampton, NY 11968, USA","coords":{"lat":40.89573487796189,"lng":-72.45414763558196},"placeId":"ChIJASCJSDmT6IkRakpaUt7dsBU"},
+          {"title":"Radisson Hotel Hauppauge-Long Island","address1":"110 Vanderbilt Motor Pkwy","address2":"Hauppauge, NY 11788, USA","coords":{"lat":40.806835031404574,"lng":-73.26445878650817},"placeId":"ChIJ6YxYb80x6IkR4kPzeBAqk7I"},
+          {"title":"Fairfield Inn by Marriott Medford Long Island","address1":"2695 NY-112","address2":"Medford, NY 11763, USA","coords":{"lat":40.82117258611,"lng":-72.99760582460632},"placeId":"ChIJ_XttYQlG6IkRsTghkEuKpT4"},
+          {"title":"Hyatt Place Long Island/East End","address1":"451 E Main St","address2":"Riverhead, NY 11901, USA","coords":{"lat":40.91845640686243,"lng":-72.65585848650818},"placeId":"ChIJcx6cyy6L6IkRU9jjV3z9WgU"},
+          {"title":"La Quinta Inn \u0026 Suites by Wyndham Islip - MacArthur Airport","address1":"10 Aero Rd","address2":"Bohemia, NY 11716, USA","coords":{"lat":40.77933926301766,"lng":-73.09563562883605},"placeId":"ChIJEcUhFSw26IkRaTFJNJYagEw"},
+          {"title":"Best Western Bar Harbour Inn","address1":"5080 Sunrise Hwy","address2":"Massapequa Park, NY 11762, USA","coords":{"lat":40.677696264139534,"lng":-73.44573807116392},"placeId":"ChIJCVA893XV6YkRydRaKlsqxDc"},
+          {"title":"Ramada by Wyndham Rockville Centre","address1":"1000 Sunrise Hwy","address2":"Rockville Centre, NY 11570, USA","coords":{"lat":40.65607514370684,"lng":-73.62324808650816},"placeId":"ChIJ6U4mzWV7wokRMLIuVmX0yZU"},
+          {"title":"HI New York City Hostel","address1":"891 Amsterdam Ave","address2":"New York, NY 10025, USA","coords":{"lat":40.798687807110916,"lng":-73.96663154232789},"placeId":"ChIJOwc3aCT2wokRZGbII0D83Mk"},
+          {"title":"Rodeway Inn Bronx Zoo","address1":"3070-72 Webster Ave","address2":"Bronx, NY 10467, USA","coords":{"lat":40.87025642582261,"lng":-73.87785845767213},"placeId":"ChIJQZ9lJXDzwokRv-GptM0Vxlk"},
+          {"title":"23 Centershore Rd","address1":"23 Centershore Rd","address2":"Centerport, NY 11721, USA","coords":{"lat":40.888081315691274,"lng":-73.37232572936094},"placeId":"ChIJhf9g2XUm6IkRLAqQS1rNwWU"},
+          {"title":"Days Inn by Wyndham Brooklyn Borough Park","address1":"1118 36th St","address2":"Brooklyn, NY 11218, USA","coords":{"lat":40.64406636940671,"lng":-73.98787081349182},"placeId":"ChIJw_4O29ZawokRJRc2loT7NZ8"},
+          {"title":"Hampton Inn \u0026 Suites Yonkers - Westchester","address1":"559 Tuckahoe Rd","address2":"Yonkers, NY 10710, USA","coords":{"lat":40.95449827983383,"lng":-73.84873579999999},"placeId":"ChIJC-KQOTbtwokRIOXwvOiAMfs"},
+          {"title":"Holiday Inn Express Roslyn - Long Island, an IHG Hotel","address1":"1053 Northern Blvd","address2":"Roslyn, NY 11576, USA","coords":{"lat":40.79867737564564,"lng":-73.66433263558197},"placeId":"ChIJ23c2FJyIwokRj8zN8zUTwGY"},
+          {"title":"Sheraton Tarrytown Hotel","address1":"600 White Plains Rd","address2":"Tarrytown, NY 10591, USA","coords":{"lat":41.06123108226461,"lng":-73.83724584047546},"placeId":"ChIJhUgvvDKVwokRVIPiZo7Mc3A"},
+          {"title":"Holiday Inn Mt. Kisco (Westchester County), an IHG Hotel","address1":"One Holiday Inn Dr","address2":"Mt Kisco, NY 10549, USA","coords":{"lat":41.22014604469046,"lng":-73.72364763068848},"placeId":"ChIJ6bl0WG26wokRDrfsR5IPFVs"},
+          {"title":"Armoni Inn \u0026 Suites","address1":"329 NY-303","address2":"Orangeburg, NY 10962, USA","coords":{"lat":41.046063515284665,"lng":-73.94324927116395},"placeId":"ChIJVVWVbmfpwokR1j3STgnnc-w"},
+          {"title":"Howard Johnson by Wyndham Suffern","address1":"17 N Airmont Rd","address2":"Suffern, NY 10901, USA","coords":{"lat":41.11454759642408,"lng":-74.11242891534422},"placeId":"ChIJURlRKUjnwokR4ZB6trrAEDA"},
+          {"title":"Comfort Inn","address1":"7-11 Peach Lake Rd","address2":"Brewster, NY 10509, USA","coords":{"lat":41.38490533229649,"lng":-73.5837589576721},"placeId":"ChIJS3LsgdRT3YkRuEqpdgbc4v0"},
+          {"title":"2105 NY-208","address1":"2105 NY-208","address2":"Montgomery, NY 12549, USA","coords":{"lat":41.51530821314733,"lng":-74.20960618280334},"placeId":"ChIJjZJL5Awq3YkRP2VGjQpNMD8"},
+          {"title":"Inn On The Hudson","address1":"634 Main St","address2":"Peekskill, NY 10566, USA","coords":{"lat":41.29031793991832,"lng":-73.92819427116393},"placeId":"ChIJuwc_59HIwokR1Tw5uFz8oGk"},
+          {"title":"Days Inn by Wyndham Middletown","address1":"4939 NY-17M","address2":"New Hampton, NY 10958, USA","coords":{"lat":41.408017272191856,"lng":-74.4121580558197},"placeId":"ChIJiVhfzAMyw4kRLkjCpyL3Wq0"},
+          {"title":"Best Western Plus Kingston Hotel And Conference Center","address1":"503 Washington Ave","address2":"Kingston, NY 12401, USA","coords":{"lat":41.939314290835135,"lng":-74.02913970978699},"placeId":"ChIJU7wrYH4P3YkRPnVJ9smFDr0"},
+          {"title":"Days Inn by Wyndham Liberty","address1":"52 Sullivan Ave","address2":"Liberty, NY 12754, USA","coords":{"lat":41.783412900100004,"lng":-74.72919274722138},"placeId":"ChIJxxNh61683IkRMSLRR4q3orc"},
+          {"title":"500 Frank Sottile Blvd","address1":"500 Frank Sottile Blvd","address2":"Kingston, NY 12401, USA","coords":{"lat":41.9697940895656,"lng":-73.98643268650818},"placeId":"ChIJCzne-9QI3YkRxXsHGq2VyVk"},
+          {"title":"Hampton Inn Oneonta","address1":"225 River St","address2":"Oneonta, NY 13820, USA","coords":{"lat":42.443501818673894,"lng":-75.08700640370483},"placeId":"ChIJ02pkXD6M24kRb7cdjhkJl5o"},
+          {"title":"Hampton Inn \u0026 Suites Cazenovia","address1":"25 Lakers Ln","address2":"Cazenovia, NY 13035, USA","coords":{"lat":42.92453946020058,"lng":-75.84211422883604},"placeId":"ChIJ0xfQdXKH2YkR5SdDF9K4JUo"},
+          {"title":"Holiday Inn Express \u0026 Suites Cooperstown","address1":"4758 NY-28","address2":"Cooperstown, NY 13326, USA","coords":{"lat":42.65334736773957,"lng":-74.96304322883606},"placeId":"ChIJhUzh_fYH3IkROlR1RAenI3A"},
+          {"title":"Microtel Inn \u0026 Suites by Wyndham Amsterdam","address1":"1393 NY-5S","address2":"Amsterdam, NY 12010, USA","coords":{"lat":42.928805228213434,"lng":-74.2022628},"placeId":"ChIJ76c2cN5h3okRXVHLzIlDkvI"},
+          {"title":"Holiday Inn Express \u0026 Suites East Greenbush(Albany-Skyline), an IHG Hotel","address1":"8 Empire Dr","address2":"Rensselaer, NY 12144, USA","coords":{"lat":42.63235833337995,"lng":-73.70175627116393},"placeId":"ChIJkeITo8wJ3okRGmrpMoNTogE"},
+          {"title":"Quality Inn Tully","address1":"5779 NY-80","address2":"Tully, NY 13159, USA","coords":{"lat":42.79941839120553,"lng":-76.11975591349183},"placeId":"ChIJ4Q5RRSUY2okRc8TvoygcSno"},
+          {"title":"Super 8 by Wyndham Sidney NY","address1":"4 Mang Dr","address2":"Sidney, NY 13838, USA","coords":{"lat":42.29875952892784,"lng":-75.40905578095091},"placeId":"ChIJ_f07WWqh24kRfRsJ70dUIcs"},
+          {"title":"Elm Tree Motel","address1":"1384 NY-23","address2":"Craryville, NY 12521, USA","coords":{"lat":42.185976813344915,"lng":-73.61479438650818},"placeId":"ChIJ3RfZBVOO3YkR17kEuPXF-fw"},
+          {"title":"Comfort Inn \u0026 Suites East Greenbush - Albany","address1":"99 Miller Rd","address2":"Castleton, NY 12033, USA","coords":{"lat":42.58033515614812,"lng":-73.68143705767211},"placeId":"ChIJ1S2RFeHi3YkR7Yxyy8BcvOE"},
+          {"title":"Hampton Inn \u0026 Suites Syracuse Dewitt","address1":"3017 Erie Blvd E","address2":"Syracuse, NY 13224, USA","coords":{"lat":43.057511421019434,"lng":-76.08694729999999},"placeId":"ChIJ6c1619Ty2YkRt9Ry5cEVKhM"},
+          {"title":"5280 Willow Pl","address1":"5280 Willow Pl","address2":"Verona, NY 13478, USA","coords":{"lat":43.117616084133815,"lng":-75.59627576322937},"placeId":"ChIJxTMZ88Jz2YkRaWZ_jnihPcs"},
+          {"title":"Hampton Inn \u0026 Suites New Hartford","address1":"201 Woods Park Drive","address2":"Clinton, NY 13323, USA","coords":{"lat":43.091110825403355,"lng":-75.33004976085205},"placeId":"ChIJ7UKGfN1B2YkR9suTxadqBgY"},
+          {"title":"Red Roof Inn \u0026 Suites Herkimer","address1":"100 Marginal Rd","address2":"Herkimer, NY 13350, USA","coords":{"lat":43.01881480713286,"lng":-74.99129851349181},"placeId":"ChIJKyG0DZhM2YkRLxny5kWm0SI"},
+          {"title":"Hampton Inn Albany-Western Ave/University Area","address1":"1442 Western Ave","address2":"Albany, NY 12203, USA","coords":{"lat":42.6790599213581,"lng":-73.836122},"placeId":"ChIJDeq1YSkL3okRxSWJ75-eOUU"},
+          {"title":"Hampton Inn by Hilton New Paltz","address1":"4 S Putt Corners Rd","address2":"New Paltz, NY 12561, USA","coords":{"lat":41.740727560272084,"lng":-74.06705530185243},"placeId":"ChIJkzMflIQi3YkRAy6fSrJ26MY"},
+          {"title":"DoubleTree by Hilton Hotel Binghamton","address1":"225 Water St","address2":"Binghamton, NY 13901, USA","coords":{"lat":42.1016764710766,"lng":-75.91412037116392},"placeId":"ChIJoczzTHDv2okR9Zd0odiLH8E"},
+          {"title":"Hampton Inn Cortland","address1":"26 River St","address2":"Cortland, NY 13045, USA","coords":{"lat":42.607309163306866,"lng":-76.16393212883605},"placeId":"ChIJWcNS43Zr2okR-ozdMp5jkHY"},
+          {"title":"Red Roof Inn Binghamton North","address1":"650 Old Front St","address2":"Binghamton, NY 13905, USA","coords":{"lat":42.124663041203156,"lng":-75.90929807116392},"placeId":"ChIJkda-t43v2okRph-7jU4CkTU"},
+          {"title":"Red Roof PLUS+ \u0026 Suites Malone","address1":"42 Finney Blvd","address2":"Malone, NY 12953, USA","coords":{"lat":44.84768236068409,"lng":-74.30025262883608},"placeId":"ChIJgyycGYLyy0wRdFRG_bIHs14"},
+          {"title":"Scottish Inns Potsdam, NY","address1":"7575 US-11","address2":"Potsdam, NY 13676, USA","coords":{"lat":44.66789798728259,"lng":-75.02048997724607},"placeId":"ChIJ8Y-l9bdgzEwRn6jl0U14uYY"},
+          {"title":"Blue Spruce Motel","address1":"325 E Orvis St","address2":"Massena, NY 13662, USA","coords":{"lat":44.93435666493602,"lng":-74.87310927116394},"placeId":"ChIJMR28YSo-zEwR8Wae8jnMbfU"},
+          {"title":"Super 8 by Wyndham Plattsburgh","address1":"7129 Route 9 North","address2":"Plattsburgh, NY 12901, USA","coords":{"lat":44.72691823257714,"lng":-73.4370636558197},"placeId":"ChIJGdETSdY4ykwRAuq203ml2T8"},
+          {"title":"The Hungry Trout Resort","address1":"5239 NY-86 Scenic","address2":"Wilmington, NY 12997, USA","coords":{"lat":44.36513470504117,"lng":-73.84170499999999},"placeId":"ChIJU4d12Pv7ykwRIvT5PaOMWpc"},
+          {"title":"445 Lake Flower Ave","address1":"445 Lake Flower Ave","address2":"Saranac Lake, NY 12983, USA","coords":{"lat":44.31600677922486,"lng":-74.12008368836061},"placeId":"ChIJUV0O3Bcby0wR4wjQBgWqVJs"},
+          {"title":"Brookside Motor Inn","address1":"7 Springfield Rd","address2":"Upper Jay, NY 12987, USA","coords":{"lat":44.33628128941742,"lng":-73.77610711349182},"placeId":"ChIJN91wQ0X6ykwRC4VyjWpHYYk"},
+          {"title":"Cobble Mountain Lodge, LLC.","address1":"2983 Wilmington Rd","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.28581146565554,"lng":-73.96682303558195},"placeId":"ChIJKZe27u3iykwREPslEc-lkG4"},
+          {"title":"Town \u0026 Country Motor Inn","address1":"2200 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.293668215401915,"lng":-73.9941506067459},"placeId":"ChIJpwTjYp7iykwRVCxzjMtkklI"},
+          {"title":"Maple Leaf Motel","address1":"1370 U.S. 9","address2":"Schroon Lake, NY 12870, USA","coords":{"lat":43.85570390954192,"lng":-73.7556862067459},"placeId":"ChIJTwU4gU0-3okRRhmBgUrI5D4"},
+          {"title":"Blue Ridge Motel","address1":"2455 U.S. 9","address2":"Schroon Lake, NY 12870, USA","coords":{"lat":43.92464207378355,"lng":-73.74334220674591},"placeId":"ChIJzd_Oroq2ykwRS4rzEGRHVBA"},
+          {"title":"Lake Placid Inn: Residences","address1":"2050 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.29598024570873,"lng":-74.00129462209014},"placeId":"ChIJZ8cOjmYdy0wRun1eOiRLCw0"},
+          {"title":"Town House Lodge","address1":"2267 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.29353490898739,"lng":-73.99045616997526},"placeId":"ChIJpwTjYp7iykwRSste53Pn_Aw"},
+          {"title":"Crowne Plaza Lake Placid, an IHG Hotel","address1":"101 Olympic Dr","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.28638779167803,"lng":-73.98697418836058},"placeId":"ChIJgblTDoXiykwR44NYBmOeSD0"},
+          {"title":"Woodlake Inn","address1":"2285 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.29342430968447,"lng":-73.99013999140166},"placeId":"ChIJgfNhhJ7iykwR0g06JBpSILM"},
+          {"title":"Best Western Plus Ticonderoga Inn \u0026 Suites","address1":"260 Burgoyne Rd","address2":"Ticonderoga, NY 12883, USA","coords":{"lat":43.858373803663014,"lng":-73.42775676441802},"placeId":"ChIJTaI-NgCqykwR-PhFv4Roouc"},
+          {"title":"Super 8 by Wyndham Ticonderoga","address1":"1144 Wicker St","address2":"Ticonderoga, NY 12883, USA","coords":{"lat":43.85806727562011,"lng":-73.43635000859832},"placeId":"ChIJv0WZGAOqykwRdWN9Xva29aQ"},
+          {"title":"Marina Motel","address1":"6 S Shore Rd","address2":"Inlet, NY 13360, USA","coords":{"lat":43.750101972777784,"lng":-74.79554489933624},"placeId":"ChIJUTJye7FI34kR1_xFiJIMa-A"},
+          {"title":"Great Pines Resort","address1":"4920 NY-28","address2":"Old Forge, NY 13420, USA","coords":{"lat":43.75842168068048,"lng":-74.85879617790984},"placeId":"ChIJhxc8nUtJ34kRiOrF4PhDNI0"},
+          {"title":"Hampton Inn \u0026 Suites Saratoga Springs Downtown","address1":"25 Lake Ave","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.0831708531018,"lng":-73.7824477067459},"placeId":"ChIJbW0E0tk53okRSZN9dn3RrTM"},
+          {"title":"Homewood Suites by Hilton Saratoga Springs","address1":"3368 S Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.05393935190532,"lng":-73.78693616441804},"placeId":"ChIJbUgHtq453okRkq7lqTU0dgk"},
+          {"title":"Holiday Inn Saratoga Springs, an IHG Hotel","address1":"232 Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.075698813117306,"lng":-73.78581303558197},"placeId":"ChIJFdzlTs453okRCshOdQcGGiw"},
+          {"title":"The Inn at Saratoga","address1":"231 Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.07594628717172,"lng":-73.78616397710722},"placeId":"ChIJaesq8xhawokReMeafonNawc"},
+          {"title":"Community Court Motel","address1":"248 Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.07673187627909,"lng":-73.78602367790987},"placeId":"ChIJfYKULs453okR3VVoa7DvzMc"},
+          {"title":"Roosevelt Inn \u0026 Suites","address1":"2961 U.S. 9","address2":"Ballston Spa, NY 12020, USA","coords":{"lat":43.027583940362874,"lng":-73.79135736441802},"placeId":"ChIJPZf3sc453okRmb8_7D6d1cE"},
+          {"title":"Holiday Inn Express \u0026 Suites Queensbury - Lake George Area, an IHG Hotel","address1":"216 Corinth Rd","address2":"Queensbury, NY 12804, USA","coords":{"lat":43.297230018016585,"lng":-73.68280836441801},"placeId":"ChIJl8k0s9vN34kRPrLNZKK_r_M"},
+          {"title":"Fairfield Inn \u0026 Suites by Marriott Queensbury Glens Falls/Lake George Area","address1":"21 Big Boom Rd","address2":"Queensbury, NY 12804, USA","coords":{"lat":43.29641373168921,"lng":-73.67678545092619},"placeId":"ChIJZTOEM7rN34kRFhoHdD6Y67o"},
+          {"title":"Budgetel Inn","address1":"1660 U.S. 9","address2":"South Glens Falls, NY 12803, USA","coords":{"lat":43.276263466800245,"lng":-73.64637826441805},"placeId":"ChIJA3BW9AzS34kRV6dY7VSkNr0"},
+          {"title":"Red Roof Inn Glens Falls - Lake George","address1":"931 U.S. 9","address2":"Queensbury, NY 12804, USA","coords":{"lat":43.33789599949949,"lng":-73.68014203372955},"placeId":"ChIJ2eF_-LTP34kRZXowbHOMeRQ"},
+          {"title":"The Deer\u0027s Head Inn","address1":"7552 Court","address2":"Elizabethtown, NY 12932, USA","coords":{"lat":44.214185501116596,"lng":-73.59437526256562},"placeId":"ChIJ7Q3LKRqTykwRRQ1j5FiHXBM"},
+          {"title":"Friends Lake Inn","address1":"963 Friends Lake Rd","address2":"Chestertown, NY 12817, USA","coords":{"lat":43.641182918902835,"lng":-73.85197122209014},"placeId":"ChIJ8yl2IUiT34kRBc_KwV_L8_w"},
+          {"title":"Clarion Inn \u0026 Suites At The Outlets Of Lake George","address1":"1454 U.S. 9","address2":"Lake George, NY 12845, USA","coords":{"lat":43.36665905020783,"lng":-73.69763654907379},"placeId":"ChIJD3D6Sp3P34kRkqoO63Qu-8o"},
+          {"title":"Riveredge Resort","address1":"17 Holland St","address2":"Alexandria Bay, NY 13607, USA","coords":{"lat":44.3392025034834,"lng":-75.91533954907379},"placeId":"ChIJa0Yidjg5zUwRtwGSp7Wh4Yw"},
+          {"title":"Tailwater Lodge Altmar, Tapestry Collection by Hilton","address1":"52 Pulaski St","address2":"Altmar, NY 13302, USA","coords":{"lat":43.514820424445574,"lng":-76.00482066256562},"placeId":"ChIJ508ugJe02YkRgUvGDhPaT8U"},
+          {"title":"Days Inn by Wyndham Evans Mills/Fort Drum","address1":"25940 US-11","address2":"Evans Mills, NY 13637, USA","coords":{"lat":44.042789494300706,"lng":-75.83761727790984},"placeId":"ChIJcTSNRWJ52IkRrRdksOPFNcc"},
+          {"title":"Allen\u0027s Budget Motel","address1":"24019 NY-342","address2":"Watertown, NY 13601, USA","coords":{"lat":44.043174900161944,"lng":-75.89383019325409},"placeId":"ChIJaaGrHgR62IkRA6VZ8Xg0ylw"},
+          {"title":"Comfort Inn \u0026 Suites Watertown - 1000 Islands","address1":"110 Commerce Park Dr","address2":"Watertown, NY 13601, USA","coords":{"lat":43.97816887121642,"lng":-75.93988817790985},"placeId":"ChIJ6ZR-MtRv2IkROTBWXHnQ_mo"},
+          {"title":"The Inn at 81","address1":"1190 Arsenal St","address2":"Watertown, NY 13601, USA","coords":{"lat":43.9771727922424,"lng":-75.94173585337298},"placeId":"ChIJAw5-yNVv2IkReteiXoo7-SM"},
+          {"title":"Ramada by Wyndham Watertown","address1":"21000 NY-3","address2":"Watertown, NY 13601, USA","coords":{"lat":43.97453137735097,"lng":-75.95238897790985},"placeId":"ChIJBxu6cSxu2IkR_482Uew_ZD8"},
+          {"title":"Best Western Watertown Fort Drum","address1":"300 Washington St","address2":"Watertown, NY 13601, USA","coords":{"lat":43.97190856981008,"lng":-75.9118431067459},"placeId":"ChIJiRBxTeNv2IkRuhRS2W-cX_k"},
+          {"title":"The Sunset Motel","address1":"13337 County Rd 123","address2":"Henderson Harbor, NY 13651, USA","coords":{"lat":43.860425693362316,"lng":-76.2008362067459},"placeId":"ChIJZ_gFI_U92IkRMFBn8rdDvSc"},
+          {"title":"Sherman Inn","address1":"615 Franklin St","address2":"Ogdensburg, NY 13669, USA","coords":{"lat":44.694930099515716,"lng":-75.48742936441802},"placeId":"ChIJPQWY2j6qzUwRHxQA1jSxnMc"},
+          {"title":"Comfort Suites Cicero - Syracuse North","address1":"5875 Carmenica Dr","address2":"Cicero, NY 13039, USA","coords":{"lat":43.18204778800122,"lng":-76.11460477790985},"placeId":"ChIJ7yESa2jr2YkRA-a8SCFH1CM"},
+          {"title":"Aartpark Hotel Inn at Lewiston","address1":"280 Portage Rd","address2":"Lewiston, NY 14092, USA","coords":{"lat":43.17026696690374,"lng":-79.03218336441803},"placeId":"ChIJBceLCu1d04kRCMG-hI-OMw0"},
+          {"title":"Holiday Inn Niagara Falls-Scenic Downtown, an IHG Hotel","address1":"114 Buffalo Ave","address2":"Niagara Falls, NY 14303, USA","coords":{"lat":43.08387682250073,"lng":-79.06113709325409},"placeId":"ChIJO3aQb0tD04kRSHCcrZgGHcE"},
+          {"title":"Holiday Inn Express \u0026 Suites Niagara Falls, an IHG Hotel","address1":"10111 Niagara Falls Blvd","address2":"Niagara Falls, NY 14304, USA","coords":{"lat":43.09764592220976,"lng":-78.94614470674591},"placeId":"ChIJeWcLyqZo04kRza6RQqzEq80"},
+          {"title":"Radisson Hotel Niagara Falls-Grand Island","address1":"100 Whitehaven Rd","address2":"Grand Island, NY 14072, USA","coords":{"lat":43.02145680895528,"lng":-78.89637346441802},"placeId":"ChIJMZbFaJ1u04kRTTFuHKs4XII"},
+          {"title":"Quality Inn","address1":"551 S Transit St","address2":"Lockport, NY 14094, USA","coords":{"lat":43.152372902478575,"lng":-78.69805036441801},"placeId":"ChIJ4XFWhNR404kRouhgH6B_IlA"},
+          {"title":"Budget Inn","address1":"1080 Sheridan Dr","address2":"Tonawanda, NY 14150, USA","coords":{"lat":42.981267206284386,"lng":-78.8939371067459},"placeId":"ChIJLcIuEPhs04kRXLRheNGBVo0"},
+          {"title":"Super 8 by Wyndham Kenmore/Buffalo/Niagara Falls Area","address1":"1288 Sheridan Dr","address2":"Kenmore, NY 14217, USA","coords":{"lat":42.98136844547392,"lng":-78.88749534907377},"placeId":"ChIJg0hVff9s04kRjBvrTg0PZ-U"},
+          {"title":"Blue Falls Motel","address1":"2142 Niagara Falls Blvd","address2":"Tonawanda, NY 14150, USA","coords":{"lat":43.01284695700562,"lng":-78.82300817790984},"placeId":"ChIJBeJgjB1y04kR1iPthfZihuc"},
+          {"title":"Amherst Inn \u0026 Suites","address1":"1951 Niagara Falls Blvd","address2":"Buffalo, NY 14228, USA","coords":{"lat":43.007914162800624,"lng":-78.82105649510649},"placeId":"ChIJw0zHaQpz04kRB4P-zOmjms4"},
+          {"title":"Days Inn by Wyndham Tonawanda/Buffalo","address1":"1120 Niagara Falls Blvd","address2":"Tonawanda, NY 14150, USA","coords":{"lat":42.98484882122904,"lng":-78.82345919325408},"placeId":"ChIJucd6YW9y04kRpQjMTMucjtc"},
+          {"title":"Boulevard Inn - Amherst","address1":"785 Niagara Falls Blvd","address2":"Amherst, NY 14226, USA","coords":{"lat":42.975592329531516,"lng":-78.8224853067459},"placeId":"ChIJ9z4fE2Jy04kRT-Wivm1WCL8"},
+          {"title":"Comfort Inn University","address1":"1 Flint Rd","address2":"Amherst, NY 14226, USA","coords":{"lat":42.990561945109995,"lng":-78.79071790674591},"placeId":"ChIJuX5_WbVz04kRtVvYuN60SAQ"},
+          {"title":"Stadium View Inn","address1":"4414 Southwestern Blvd","address2":"Hamburg, NY 14075, USA","coords":{"lat":42.765032370825814,"lng":-78.82342063558198},"placeId":"ChIJG1jDG0cF04kRaXdD_aDLghY"},
+          {"title":"Red Carpet Inn Orchard Park, NY","address1":"Rte 20","address2":"3940 Southwestern Blvd, Orchard Park, NY 14127, USA","coords":{"lat":42.7768933830678,"lng":-78.79390156441802},"placeId":"ChIJcRXKnX8F04kR5JW2ju83vKg"},
+          {"title":"Angola Motel","address1":"9159 Erie Rd","address2":"Angola, NY 14006, USA","coords":{"lat":42.635251167844885,"lng":-79.04946762394256},"placeId":"ChIJaUo1NZHf0okRp_KvWWfO4DQ"},
+          {"title":"Theater Motel","address1":"7592 US-20","address2":"Westfield, NY 14787, USA","coords":{"lat":42.336773635319055,"lng":-79.55418312209017},"placeId":"ChIJwQB4Ck1ILYgRU6LGTODXPP0"},
+          {"title":"Americas Best Value Inn Jamestown West Ellicott","address1":"620 Fairmount Ave","address2":"Jamestown, NY 14701, USA","coords":{"lat":42.09776341125283,"lng":-79.27515510489349},"placeId":"ChIJIxHXJ26p0okRqZHz3X0HKnM"},
+          {"title":"Microtel Inn \u0026 Suites by Wyndham Olean/Allegany","address1":"3234 NY-417","address2":"Olean, NY 14760, USA","coords":{"lat":42.080129561373504,"lng":-78.47693136441804},"placeId":"ChIJizFvsoJw0okRb_N2xjsZJXc"},
+          {"title":"Medina Inn","address1":"11368 Maple Ridge Rd","address2":"Medina, NY 14103, USA","coords":{"lat":43.206948376634955,"lng":-78.38864182209014},"placeId":"ChIJ6wBHju131IkR49rjcW4h3rQ"},
+          {"title":"Rodeway Inn Rochester Airport","address1":"1273 Chili Ave","address2":"Rochester, NY 14624, USA","coords":{"lat":43.13845387703714,"lng":-77.66813490674592},"placeId":"ChIJJ5MQwUOz1okRzn392ojxEXw"},
+          {"title":"Econo Lodge Rochester I-90 \u0026 I-390","address1":"3990 W Henrietta Rd","address2":"Rochester, NY 14623, USA","coords":{"lat":43.07313087638035,"lng":-77.64386902209014},"placeId":"ChIJ239lh49L0YkR37QO3ALB93E"},
+          {"title":"Days Inn by Wyndham Hornell NY","address1":"1157 NY-36","address2":"Hornell, NY 14843, USA","coords":{"lat":42.367331511098584,"lng":-77.67538051653291},"placeId":"ChIJ6UCU_Zua0YkR2muQHRZgf9k"},
+          {"title":"Park-Lake Motel","address1":"55 N Main St","address2":"Perry, NY 14530, USA","coords":{"lat":42.72014661779594,"lng":-78.00121933558196},"placeId":"ChIJtQPhWJTZ04kRzXiuAA9fF_4"},
+          {"title":"The East Hill Inn","address1":"5584 US-20A","address2":"Warsaw, NY 14569, USA","coords":{"lat":42.74562104872131,"lng":-78.11242936441803},"placeId":"ChIJIUNsFivF04kRYDrW_UWPiqs"},
+          {"title":"Quality Inn Falconer - Jamestown","address1":"1980 E Main St","address2":"Falconer, NY 14733, USA","coords":{"lat":42.127547512985636,"lng":-79.19112853187713},"placeId":"ChIJyZPn4fql0okRoirtSwN0NNw"},
+          {"title":"Super 8 by Wyndham Bath Hammondsport Area","address1":"333 W Morris St","address2":"Bath, NY 14810, USA","coords":{"lat":42.337143768054375,"lng":-77.33222536441802},"placeId":"ChIJLbeD1Uqu0YkRkDRHCcyZolQ"},
+          {"title":"Budget Inn Horseheads, NY","address1":"3325 S Main St","address2":"Horseheads, NY 14845, USA","coords":{"lat":42.155329855291946,"lng":-76.81594763558195},"placeId":"ChIJS73y93Fq0IkR3vPGnSSd6GQ"},
+          {"title":"Econo Lodge Elmira-Corning","address1":"871 County Rd 64","address2":"Elmira, NY 14903, USA","coords":{"lat":42.15553579293607,"lng":-76.87904899325409},"placeId":"ChIJJbRmywVB0IkR8nx0H-hiFiY"},
+          {"title":"Econo Lodge Painted Post - Corning","address1":"200 Robert Dann Dr","address2":"Painted Post, NY 14870, USA","coords":{"lat":42.154625466337116,"lng":-77.1101541951065},"placeId":"ChIJM-KRmRhK0IkR7d9UAgw0aLA"},
+          {"title":"Chaffee Lodge","address1":"13550 W Schutt Rd","address2":"Chaffee, NY 14030, USA","coords":{"lat":42.54193231145386,"lng":-78.47975527976227},"placeId":"ChIJdQSCwXZS0okRckN5g-5UR0s"},
+          {"title":"Royal Inn","address1":"7463 NY-96","address2":"Victor, NY 14564, USA","coords":{"lat":43.00696610266859,"lng":-77.4453156932541},"placeId":"ChIJS9K9wGYx0YkRMP7EZMfBGc0"},
+          {"title":"Microtel Inn \u0026 Suites by Wyndham Bath","address1":"370 W Morris St","address2":"Bath, NY 14810, USA","coords":{"lat":42.340759908719754,"lng":-77.33513411045074},"placeId":"ChIJyZaBe7Ov0YkRxt3LmbLqxVk"},
+          {"title":"Days Inn by Wyndham Weedsport","address1":"9050 NY-34","address2":"Weedsport, NY 13166, USA","coords":{"lat":43.05569958877259,"lng":-76.55890263372955},"placeId":"ChIJAZLJRPJT14kRtZI9NNnkF2I"},
+          {"title":"Microtel Inn \u0026 Suites by Wyndham Seneca Falls","address1":"1966 Route 5 and","address2":"US-20, Seneca Falls, NY 13148, USA","coords":{"lat":42.902668908125555,"lng":-76.83388179510652},"placeId":"ChIJKQSvzom20IkRyEDmhEULQS4"},
+          {"title":"Nightshade Inn \u0026 Gardens","address1":"2382 W Genesee Turnpike","address2":"Camillus, NY 13031, USA","coords":{"lat":43.03520403423731,"lng":-76.34321373558197},"placeId":"ChIJGaX-MRv52YkRA7Mryvajj5c"},
+          {"title":"Microtel Inn \u0026 Suites by Wyndham Baldwinsville/Syracuse","address1":"131 Downer St","address2":"Baldwinsville, NY 13027, USA","coords":{"lat":43.15070433474903,"lng":-76.34467611468048},"placeId":"ChIJ7X7BQJLk2YkRyj-xlj9lioM"},
+          {"title":"All Seasons Inn","address1":"5422 NY-104","address2":"Oswego, NY 13126, USA","coords":{"lat":43.46625731781054,"lng":-76.42116516441803},"placeId":"ChIJRzSPnLDX2YkRkN0aEGLq-1c"},
+          {"title":"Best Western Plus Vineyard Inn \u0026 Suites","address1":"142 Lake St","address2":"Penn Yan, NY 14527, USA","coords":{"lat":42.65647027283504,"lng":-77.05474746627044},"placeId":"ChIJKUAMn8zl0IkRt6qlUyAUlwc"},
+          {"title":"Lincklaen House","address1":"79 Albany St","address2":"Cazenovia, NY 13035, USA","coords":{"lat":42.93026808420408,"lng":-75.85311555092619},"placeId":"ChIJRcLIowqH2YkRbCP5PmJoNq8"},
+          {"title":"Econo Lodge","address1":"10 Church St","address2":"Cortland, NY 13045, USA","coords":{"lat":42.60140960061884,"lng":-76.17865136441802},"placeId":"ChIJlUDYp4Br2okRZWx9U2hR9_A"},
+          {"title":"Super 8 by Wyndham Sidney NY","address1":"4 Mang Dr","address2":"Sidney, NY 13838, USA","coords":{"lat":42.2989130317863,"lng":-75.40899677235258},"placeId":"ChIJ_f07WWqh24kRfRsJ70dUIcs"},
+          {"title":"Candlewood Suites Building 9090","address1":"9090 Mt Belvedere Blvd","address2":"Fort Drum, NY 13603, USA","coords":{"lat":44.038350872484216,"lng":-75.80094676441804},"placeId":"ChIJQYcW1vx92IkRT6KeQCInG8A"},
+          {"title":"Red Carpet Inn Pulaski, NY","address1":"3723 3724","address2":"NY-13, Pulaski, NY 13142, USA","coords":{"lat":43.553877535291655,"lng":-76.11133187790985},"placeId":"ChIJuZoG0DU12IkRIcKMeSgWszg"},
+          {"title":"Motel 6 Oriskany, NY","address1":"5920 Airport Rd","address2":"Oriskany, NY 13424, USA","coords":{"lat":43.14818534537206,"lng":-75.37814793558195},"placeId":"ChIJFZnyvdFq2YkRAqbnPH3-__k"},
+          {"title":"Super 8 by Wyndham Norwich","address1":"6067 NY-12","address2":"Norwich, NY 13815, USA","coords":{"lat":42.54540801690341,"lng":-75.52559041838532},"placeId":"ChIJLxZOo96524kRrpbz1p7wDkU"}
+        ],
+        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
+        "mapsApiKey": "AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs"
+      };
+
+        function initMap() {
+            new LocatorPlus(CONFIGURATION);
+        }
+    </script>
+    <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
+      {{#each locations}}
+        <li class="location-result" data-location-index="{{index}}">
+          <button class="select-location">
+            <h2 class="name">{{title}}</h2>
+          </button>
+          <div class="address">{{address1}}<br>{{address2}}</div>
+          <button class="details-button">
+            View details
+          </button>
+          {{#if travelDistanceText}}
+            <div class="distance">{{travelDistanceText}}</div>
+          {{/if}}
+          {{#if ../showDirectionsButton}}
+            <button class="show-directions" title="Show directions to this location">
+              <svg width="34" height="34" viewBox="0 0 34 34"
+                   fill="none" xmlns="http://www.w3.org/2000/svg" alt="Show directions">
+                <path d="M17.5867 9.24375L17.9403 8.8902V8.8902L17.5867 9.24375ZM16.4117 9.24375L16.7653 9.59731L16.7675 9.59502L16.4117 9.24375ZM8.91172 16.7437L8.55817 16.3902L8.91172 16.7437ZM8.91172 17.9229L8.55817 18.2765L8.55826 18.2766L8.91172 17.9229ZM16.4117 25.4187H16.9117V25.2116L16.7652 25.0651L16.4117 25.4187ZM16.4117 25.4229H15.9117V25.63L16.0582 25.7765L16.4117 25.4229ZM25.0909 17.9229L25.4444 18.2765L25.4467 18.2742L25.0909 17.9229ZM25.4403 16.3902L17.9403 8.8902L17.2332 9.5973L24.7332 17.0973L25.4403 16.3902ZM17.9403 8.8902C17.4213 8.3712 16.5737 8.3679 16.0559 8.89248L16.7675 9.59502C16.8914 9.4696 17.1022 9.4663 17.2332 9.5973L17.9403 8.8902ZM16.0582 8.8902L8.55817 16.3902L9.26527 17.0973L16.7653 9.5973L16.0582 8.8902ZM8.55817 16.3902C8.0379 16.9105 8.0379 17.7562 8.55817 18.2765L9.26527 17.5694C9.13553 17.4396 9.13553 17.227 9.26527 17.0973L8.55817 16.3902ZM8.55826 18.2766L16.0583 25.7724L16.7652 25.0651L9.26517 17.5693L8.55826 18.2766ZM15.9117 25.4187V25.4229H16.9117V25.4187H15.9117ZM16.0582 25.7765C16.5784 26.2967 17.4242 26.2967 17.9444 25.7765L17.2373 25.0694C17.1076 25.1991 16.895 25.1991 16.7653 25.0694L16.0582 25.7765ZM17.9444 25.7765L25.4444 18.2765L24.7373 17.5694L17.2373 25.0694L17.9444 25.7765ZM25.4467 18.2742C25.9631 17.7512 25.9663 16.9096 25.438 16.3879L24.7354 17.0995C24.8655 17.2279 24.8687 17.4363 24.7351 17.5716L25.4467 18.2742Z" fill="#7e7efd"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19 19.8333V17.75H15.6667V20.25H14V16.9167C14 16.4542 14.3708 16.0833 14.8333 16.0833H19V14L21.9167 16.9167L19 19.8333Z" fill="#7e7efd"/>
+                <circle cx="17" cy="17" r="16.5" stroke="#7e7efd"/>
+              </svg>
+            </button>
+          {{/if}}
+        </li>
+      {{/each}}
+    </script>
+    <script id="locator-details-tmpl" type="text/x-handlebars-template">
+      <button class="back-button">
+        <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/arrow_back/v11/24px.svg" alt=""/>
+        Back
+      </button>
+      <header>
+        <div class="banner">
+          <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.9976 11.5003C22.9976 13.2137 22.7083 14.9123 21.8025 16.7056C18.6321 22.9832 12.7449 24.3314 12.2758 30.7085C12.2448 31.1294 11.9286 31.4744 11.4973 31.4744C11.0689 31.4744 10.7527 31.1294 10.7218 30.7085C10.2527 24.3314 4.3655 22.9832 1.19504 16.7056C0.289306 14.9123 0 13.2137 0 11.5003C0 5.13275 5.14557 0 11.5003 0C17.852 0 22.9976 5.13275 22.9976 11.5003Z" fill="#4285F4"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" transform="translate(5.5,5.5)" d="M6 8.84091L9.708 11L8.724 6.92961L12 4.19158L7.6856 3.83881L6 0L4.3144 3.83881L0 4.19158L3.276 6.92961L2.292 11L6 8.84091Z" fill="#FBE15C"/>
+          </svg>
+        </div>
+        <h2>{{location.title}}</h2>
+      </header>
+      {{#if location.travelDistanceText}}
+        <div class="distance">{{location.travelDistanceText}} away</div>
+      {{/if}}
+      <div class="address">
+        {{location.address1}}<br>
+        {{location.address2}}
+      </div>
+      <div class="atmosphere">
+        {{#if place.rating}}
+          <span class="star-rating-numeric">{{place.rating}}</span>
+          <span>
+            {{#each place.fullStarIcons}}
+              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/star/v15/24px.svg"
+                   alt="" class="star-icon"/>
+            {{/each}}
+            {{#each place.halfStarIcons}}
+              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/star_half/v17/24px.svg"
+                   alt="" class="star-icon"/>
+            {{/each}}
+            {{#each place.emptyStarIcons}}
+              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/star_outline/v9/24px.svg"
+                   alt="" class="star-icon"/>
+            {{/each}}
+          </span>
+        {{/if}}
+        {{#if place.user_ratings_total}}
+          <a href="{{place.url}}" target="_blank">{{place.user_ratings_total}} reviews</a>
+        {{else}}
+          <a href="{{place.url}}" target="_blank">See on Google Maps</a>
+        {{/if}}
+        {{#if place.price_level}}
+          &bull;
+          <span class="price-dollars">
+            {{#each place.dollarSigns}}${{/each}}
+          </span>
+        {{/if}}
+      </div>
+      <hr/>
+      {{#if place.opening_hours}}
+        <div class="hours contact">
+          <img src="https://fonts.gstatic.com/s/i/googlematerialicons/schedule/v12/24px.svg"
+               alt="Opening hours" class="icon"/>
+          <div class="right">
+            {{#each place.openingHoursSummary}}
+              <div>
+                <span class="weekday">{{days}}</span>
+                <span class="hours">{{hours}}</span>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+      {{#if place.website}}
+        <div class="website contact">
+          <img src="https://fonts.gstatic.com/s/i/googlematerialicons/public/v10/24px.svg"
+               alt="Website" class="icon"/>
+          <div class="right">
+            <a href="{{place.website}}" target="_blank">{{place.websiteDomain}}</a>
+          </div>
+        </div>
+      {{/if}}
+      {{#if place.formatted_phone_number}}
+        <div class="phone contact">
+          <img src="https://fonts.gstatic.com/s/i/googlematerialicons/phone/v10/24px.svg"
+               alt="Phone number" class="icon"/>
+          <div class="right">
+            {{place.formatted_phone_number}}
+          </div>
+        </div>
+      {{/if}}
+      {{#if place.html_attributions}}
+        {{#each place.html_attributions}}
+          <p class="attribution">{{{this}}}</p>
+        {{/each}}
+      {{/if}}
+    </script>
+    <!-- end From Google documentation Basic Javascript for getting address and displaying hotels -->
+
+   <!-- navbar JQuery code -->
+   <script> 
+        $(document).ready(function() {
+
+    
+        // Check for click events on the navbar burger icon
+            $('.navbar-burger').click(function() {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $(".navbar-burger").toggleClass("is-active");
+            $(".navbar-menu").toggleClass("is-active");
+    
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <div class="container-is-max-desktop">
-        <!-- header starts -->
-        <header>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <!-- logo -->
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="">
-                        <img src="./assets/images/logo_shellter_white.svg" alt="shellter logo" width="200" height="">
-                    </a>
+    <!-- header starts -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <!-- logo -->
+            <div class="navbar-brand">
+                <a class="navbar-item" href="">
+                    <img src="./assets/images/logo_shellter_white.svg" alt="shellter logo" width="200" height="">
+                </a> 
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+            </div>
+            <!-- navbar links -->
+            <div class="navbar-menu" id="navMenu">
+                <a class="navbar-item">
+                    Home
+                </a>
+                <a class="navbar-item">
+                    Search
+                </a>
+                <a class="navbar-item">
+                    Resources
+                </a>
+                <a class="navbar-item">
+                    Contact
+                </a>
+            </div>
+        </nav>
+        
+            
+        
+    </header>
+    <!-- header end -->
+    
+
+    <Main>
+        <!-- user location map -->
+        <div>
+            <div class="user-location-map">
+                <div id="map-container">
+                    <div id="locations-panel">
+                        <div id="locations-panel-list">
+                            <header>
+                                <h1 class="search-title">
+                                    <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg" />
+                                    Find a location near you
+                                </h1>
+                                <div class="search-input">
+                                    <input id="location-search-input" placeholder="Enter your address or zip code">
+                                    <div id="search-overlay-search" class="search-input-overlay search">
+                                        <button id="location-search-button">
+                                            <img class="icon"
+                                                src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg"
+                                                alt="Search" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="section-name" id="location-results-section-name">
+                                All locations
+                            </div>
+                            <div class="results">
+                                <ul id="location-results-list"></ul>
+                            </div>
+                        </div>
+                        <div id="locations-panel-details"></div>
+                    </div>
+                    <div id="map"></div>
                 </div>
-                <!-- navbar links -->
-                <div class="navbar-menu is-active">
-                    <a class="navbar-item">
-                        Home
-                    </a>
-                    <a class="navbar-item">
-                        Search
-                    </a>
-                    <a class="navbar-item">
-                        Resources
-                    </a>
-                    <a class="navbar-item">
-                        Contact
-                    </a>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABCDE"
+                    async defer></script>
+            </div>
+            <button id="Save-Hotel">
+                Save Hotel
+            </button>
+            <div id="bottom-border"></div>
+        </div>
+    </Main>
+    <!-- user location map END -->
+
+        <!-- Cards START -->
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="content" id="card-1">
+                      
+                    </div>
                 </div>
-            </nav>
-
-
-            </navbar>
-        </header>
-        <!-- header end -->
-
-        <Main>
-            <!-- user location map -->
-            <div class="user-location-map"></div>
-
-        </Main>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="content" id="card-2">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="content" id="card-3">
+                
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                     <div class="content" id="card-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+
+
     <footer>
-        <ol>
-            <h2>Resources: </h2>
-            <li>
-                <h3>Suicide Prevention:<br>
-                    <a href="https://omh.ny.gov/omhweb/suicide_prevention/ ">https://omh.ny.gov/omhweb/suicide_prevention/</a> 
-                </h3>
-                </li>
+      <ol>
+          <h2>Resources: </h2>
+          <li>
+              <h3>Suicide Prevention:<br>
+                  <a href="https://omh.ny.gov/omhweb/suicide_prevention/ ">https://omh.ny.gov/omhweb/suicide_prevention/</a> 
+              </h3>
+              </li>
 
-            <li>
-                <h3>Trans Youth:</h3>
-            </li>
+          <li>
+              <h3>Trans Youth:</h3>
+          </li>
 
-                <li>
-                    <h3>
-                    Text HOME to 741741 to connect with a Crisis Text Line counselor via text message.<br>
-                   <a href="https://www.1800runaway.org/youth-teens"> https://www.1800runaway.org/youth-teens </a>
-                    </h3>
-                </li>
+              <li>
+                  <h3>
+                  Text HOME to 741741 to connect with a Crisis Text Line counselor via text message.<br>
+                 <a href="https://www.1800runaway.org/youth-teens"> https://www.1800runaway.org/youth-teens </a>
+                  </h3>
+              </li>
 
-            <li>
-                <h3>
-                    Homeless Shelters:<br>
-                <a href="https://www1.nyc.gov/site/dhs/index.page"> https://www1.nyc.gov/site/dhs/index.page</a>
-                </h3>
-            </li>
+          <li>
+              <h3>
+                  Homeless Shelters:<br>
+              <a href="https://www1.nyc.gov/site/dhs/index.page"> https://www1.nyc.gov/site/dhs/index.page</a>
+              </h3>
+          </li>
 
-            <li>
-                <h3>COVID-19:<br>
-                <a href="https://portal.311.nyc.gov/article/?kanumber=KA-03301">https://portal.311.nyc.gov/article/?kanumber=KA-03301</a>
-                </h3>
-            </li>
-        </ol>
-    </footer>
+          <li>
+              <h3>COVID-19:<br>
+              <a href="https://portal.311.nyc.gov/article/?kanumber=KA-03301">https://portal.311.nyc.gov/article/?kanumber=KA-03301</a>
+              </h3>
+          </li>
+      </ol>
+  </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
