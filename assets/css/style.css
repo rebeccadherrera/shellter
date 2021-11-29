@@ -94,6 +94,17 @@ a.navbar-item:hover {
     color: white;
 }
 /* end  User location map */
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+/* END FOOTER */
+
 /* cards style */
 .card {
     background-color: #66C9D7;
