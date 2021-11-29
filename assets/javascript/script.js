@@ -1,16 +1,27 @@
 var saveHotelBtn = document.getElementById("Save-Hotel");
+
 var hotelList = [];
 var hotel;
 var hotelDetails = [];
+
+saveHotelBtn.style.display = 'none';
+
 
 
 var saveHotel = function() {
     hotel = document.getElementById('locations-panel-details')
     hotel = hotel.innerText.slice(6);
     
-    displayOnCard(hotel);
-    
 
+    if (hotel) {
+      displayOnCard(hotel);
+    }
+    
+    
+    var card1 = document.getElementById('card-1');
+    var card2 = document.getElementById('card-2');
+    var card3 = document.getElementById('card-3');
+    var card4 = document.getElementById('card-4');
     
 
     hotelList = localStorage.getItem("HotelList");
@@ -20,7 +31,10 @@ var saveHotel = function() {
     }
     else if(hotelList) {
       hotelList = JSON.parse(hotelList);
-      hotelList.push(hotel);
+      hotelList[3] = card4.textContent;
+      hotelList[2] = card3.textContent;
+      hotelList[1] = card2.textContent;
+      hotelList[0] = card1.textContent;
     }
     else if (hotel) {
       hotelList = [hotel];
@@ -29,7 +43,10 @@ var saveHotel = function() {
     if (hotelList) {
       localStorage.setItem("HotelList" , JSON.stringify(hotelList));
 
-    return hotelList;
+      card4.textContent = hotelList[3];
+      card3.textContent = hotelList[2];
+      card2.textContent = hotelList[1];
+      card1.textContent = hotelList[0];
     }
 };
 
@@ -48,9 +65,25 @@ var displayOnCard = function(hotel) {
   card1.textContent = hotel;
 };
 
+var hideSaveBtn = function(event) {
+  console.log(event);
+  if ($(event.target).hasClass("back-button")) {
+    saveHotelBtn.style.display = 'none';
+  }
+};
+
+var showSaveBtn = function(event) {
+  console.log(event.target);
+  console.log('<button class="details-button"> View details </button>');
+  if ($(event.target).hasClass("details-button")) {
+    saveHotelBtn.style.display = 'block';
+  }
+};
 
 
+saveHotel();
 
-
-saveHotelBtn.addEventListener("click", saveHotel);
+$("#locations-panel-details").on("click", hideSaveBtn);
+$("#location-results-list").on("click", showSaveBtn);
+$(saveHotelBtn).on("click", saveHotel);
 

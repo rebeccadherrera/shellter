@@ -31,6 +31,14 @@ a.navbar-item:hover {
 
 /* HEADER / NAVBAR STYLES END */
 
+.navbar-burger {
+    color: #66C9D7;
+}
+
+.navbar-burger:hover{
+    color: white;
+}
+
 /* User location map */
 .user-location-map {
     height: 500px;
