@@ -59,12 +59,30 @@ a.navbar-item:hover {
 }
 
 .column {
-    background-color: rgb(113, 167, 66);
     margin-top: 30px;
 }
-/* end  User location map */
-/*overwriting google fonts */
 #locations-panel-list .location-result h2.name {
+    font-size: 16pt;
+    font-weight: 700;
+    color:#66C9D7;
+}
+#locations-panel-details h2 {
+    font-size: 16pt;
+    font-weight: 700;
+}
+#locations-panel-list h1.search-title {
     font-size: 18pt;
     font-weight: 700;
+    color: #352870;
+}
+#Save-Hotel:hover {
+    background-color:#66C9D7;
+    color: white;
+}
+/* end  User location map */
+/* cards style */
+.card {
+    background-color: #66C9D7;
+    padding: 20px;
+    color: #000;
 }

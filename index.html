@@ -21,155 +21,155 @@
 
     <!-- From Google documentation Basic Javascript for getting address and displaying hotels -->
     <script>
-      const CONFIGURATION = {
-        "locations": [
-          {"title":"Hampton Inn Oneonta","address1":"225 River St","address2":"Oneonta, NY 13820, USA","coords":{"lat":42.44364457680803,"lng":-75.08686156441803},"placeId":"ChIJ02pkXD6M24kRb7cdjhkJl5o"},
-          {"title":"236 Edgemere St","address1":"236 Edgemere St","address2":"Montauk, NY 11954, USA","coords":{"lat":41.048357701441496,"lng":-71.94962536508179},"placeId":"ChIJj8K_A7NU74kRcyS0znikFRI"},
-          {"title":"1655 County Rd 39","address1":"1655 County Rd 39","address2":"Southampton, NY 11968, USA","coords":{"lat":40.89593366593762,"lng":-72.4538054576721},"placeId":"ChIJ-ei7NTmT6IkR0FrrBKaJH5I"},
-          {"title":"110 Vanderbilt Motor Pkwy","address1":"110 Vanderbilt Motor Pkwy","address2":"Brentwood, NY 11717, USA","coords":{"lat":40.80694189156402,"lng":-73.26459543068846},"placeId":"ChIJZUG6gdIx6IkRgFFerSs5Fp0"},
-          {"title":"2695 NY-112","address1":"2695 NY-112","address2":"Medford, NY 11763, USA","coords":{"lat":40.821711078899746,"lng":-72.99712694110451},"placeId":"ChIJkS5obglG6IkRBo4kKh8qSHY"},
-          {"title":"451 E Main St","address1":"451 E Main St","address2":"Riverhead, NY 11901, USA","coords":{"lat":40.918371839243115,"lng":-72.65585312209015},"placeId":"ChIJaVCxsC6L6IkREotDo77UAw4"},
-          {"title":"10 Aero Rd","address1":"10 Aero Rd","address2":"Bohemia, NY 11716, USA","coords":{"lat":40.77941431388933,"lng":-73.09520468650818},"placeId":"ChIJJ3FWFSw26IkRzGm6411OQHw"},
-          {"title":"5080 Sunrise Hwy","address1":"5080 Sunrise Hwy","address2":"Massapequa Park, NY 11762, USA","coords":{"lat":40.6775876454487,"lng":-73.44580902209013},"placeId":"ChIJQzClIJ7V6YkRt9SbTNJSjvc"},
-          {"title":"1000 Sunrise Hwy","address1":"1000 Sunrise Hwy","address2":"Rockville Centre, NY 11570, USA","coords":{"lat":40.656633231798295,"lng":-73.62345969325409},"placeId":"ChIJzT_Tw2V7wokRjGKmD2n_piE"},
-          {"title":"173-144 Liberty Ave","address1":"173-144 Liberty Ave","address2":"Jamaica, NY 11433, USA","coords":{"lat":40.70464076272044,"lng":-73.78431417055225},"placeId":"EisxNzMtMTQ0IExpYmVydHkgQXZlLCBKYW1haWNhLCBOWSAxMTQzMywgVVNBIlESTwo0CjIJ9cGJ4CJhwokReLOZrYrV99YaHgsQ7sHuoQEaFAoSCY9vsIslYcKJER0i3Cytlk4lDBCQASoUChIJ2aeqpFZnwokRXLj7B3aHL4M"},
-          {"title":"891 Amsterdam Ave","address1":"891 Amsterdam Ave","address2":"New York, NY 10025, USA","coords":{"lat":40.79870083776091,"lng":-73.96667557301636},"placeId":"ChIJdYnsayT2wokRlmd6rWv7lJw"},
-          {"title":"3070 Webster Ave","address1":"3070 Webster Ave","address2":"Bronx, NY 10467, USA","coords":{"lat":40.87022052106063,"lng":-73.87786326441804},"placeId":"EiYzMDcwIFdlYnN0ZXIgQXZlLCBCcm9ueCwgTlkgMTA0NjcsIFVTQSJREk8KNAoyCV_87DBw88KJEU5BbZBpZNnqGh4LEO7B7qEBGhQKEgkzbdlWE_PCiRHu9TTfxWQBewwQ_hcqFAoSCffMNzB_88KJEUzNnC8VeYAf"},
-          {"title":"23 Centershore Rd","address1":"23 Centershore Rd","address2":"Centerport, NY 11721, USA","coords":{"lat":40.88843692652713,"lng":-73.37288899325407},"placeId":"ChIJhf9g2XUm6IkRLAqQS1rNwWU"},
-          {"title":"1118 36th St","address1":"1118 36th St","address2":"Brooklyn, NY 11218, USA","coords":{"lat":40.64407964996262,"lng":-73.98796924418028},"placeId":"ChIJbQQZ29ZawokRWQegjAjA4wE"},
-          {"title":"Morris Avenue","address1":"Morris Ave","address2":"Bronx, NY 10453, USA","coords":{"lat":40.85496198795255,"lng":-73.90400456441803},"placeId":"EiBNb3JyaXMgQXZlLCBCcm9ueCwgTlkgMTA0NTMsIFVTQSIuKiwKFAoSCZ9KYfdA9MKJEVdbOgErWA9lEhQKEgnDEHS3EvTCiRGwb__Dnzyztg"},
-          {"title":"559 Tuckahoe Rd","address1":"559 Tuckahoe Rd","address2":"Yonkers, NY 10710, USA","coords":{"lat":40.954496740815834,"lng":-73.84875756441801},"placeId":"ChIJpa9DbjbtwokRiVjEtrtQy0U"},
-          {"title":"1053 Northern Blvd","address1":"1053 Northern Blvd","address2":"Roslyn, NY 11576, USA","coords":{"lat":40.79858611187305,"lng":-73.66424982209014},"placeId":"ChIJ7UrWtpqIwokRJ8VDwPrDD3k"},
-          {"title":"600 White Plains Rd","address1":"600 White Plains Rd","address2":"Tarrytown, NY 10591, USA","coords":{"lat":41.061298999604325,"lng":-73.83736296441802},"placeId":"ChIJ5W9wvTOVwokRD5K1QbM-ao0"},
-          {"title":"Holiday Inn Drive","address1":"Holiday Inn Dr","address2":"Mt Kisco, NY 10549, USA","coords":{"lat":41.219394071119474,"lng":-73.72476994662703},"placeId":"EidIb2xpZGF5IElubiBEciwgTXQgS2lzY28sIE5ZIDEwNTQ5LCBVU0EiLiosChQKEgk97t6tErrCiREs4GE77ntpFBIUChIJ41fjKX26wokRnzCCXKGsk_I"},
-          {"title":"329 NY-303","address1":"329 NY-303","address2":"Orangeburg, NY 10962, USA","coords":{"lat":41.046189850015594,"lng":-73.94383201534424},"placeId":"ChIJyaY6b2fpwokRtFKFfii2B74"},
-          {"title":"17 N Airmont Rd","address1":"17 N Airmont Rd","address2":"Suffern, NY 10901, USA","coords":{"lat":41.11459538783686,"lng":-74.1124235509262},"placeId":"ChIJzVdDYE_nwokR3SgOPKDRkUA"},
-          {"title":"7 Peach Lake Rd","address1":"7 Peach Lake Rd","address2":"Brewster, NY 10509, USA","coords":{"lat":41.38560183712597,"lng":-73.58324752209015},"placeId":"Eig3IFBlYWNoIExha2UgUmQsIEJyZXdzdGVyLCBOWSAxMDUwOSwgVVNBIlASTgo0CjIJpX0sSxVT3YkRz9nFH6roMyAaHgsQ7sHuoQEaFAoSCZccFWSlU92JEZBJyere-pIADBAHKhQKEgmnSW0XRlPdiRGElvY9ickaUA"},
-          {"title":"2105 NY-208","address1":"2105 NY-208","address2":"Montgomery, NY 12549, USA","coords":{"lat":41.51530258958259,"lng":-74.20972956441803},"placeId":"ChIJjZJL5Awq3YkRP2VGjQpNMD8"},
-          {"title":"634 Main St","address1":"634 Main St","address2":"Peekskill, NY 10566, USA","coords":{"lat":41.290631911641505,"lng":-73.92831394110449},"placeId":"ChIJdW2toNHIwokRLuN_3lv8b1E"},
-          {"title":"4939 NY-17M","address1":"4939 NY-17M","address2":"New Hampton, NY 10958, USA","coords":{"lat":41.407997054440656,"lng":-74.41222779325409},"placeId":"ChIJdSy50QMyw4kRo_yyRmprb0w"},
-          {"title":"503 Washington Ave","address1":"503 Washington Ave","address2":"Kingston, NY 12401, USA","coords":{"lat":41.93956025737985,"lng":-74.02941469325408},"placeId":"ChIJLdIeBn4P3YkRVKFgKTDOt80"},
-          {"title":"52 Sullivan Ave","address1":"52 Sullivan Ave","address2":"Liberty, NY 12754, USA","coords":{"lat":41.78345220048859,"lng":-74.72942509325406},"placeId":"ChIJUwx761683IkRKYyzNACU3a8"},
-          {"title":"500 Frank Sottile Blvd","address1":"500 Frank Sottile Blvd","address2":"Kingston, NY 12401, USA","coords":{"lat":41.96985047628031,"lng":-73.98642732209015},"placeId":"ChIJCzne-9QI3YkRxXsHGq2VyVk"},
-          {"title":"225 River St","address1":"225 River St","address2":"Oneonta, NY 13820, USA","coords":{"lat":42.44363073874566,"lng":-75.08681859325408},"placeId":"ChIJqVVkXD6M24kRUb7xfIruySI"},
-          {"title":"25 Lakers Ln","address1":"25 Lakers Ln","address2":"Cazenovia, NY 13035, USA","coords":{"lat":42.92449665694906,"lng":-75.84195456441803},"placeId":"ChIJi-zSdXKH2YkRPaIrGqoo810"},
-          {"title":"4758 NY-28","address1":"4758 NY-28","address2":"Cooperstown, NY 13326, USA","coords":{"lat":42.65343879685655,"lng":-74.96281289325407},"placeId":"ChIJM-0ZJ_cH3IkRwyVC7dBl21s"},
-          {"title":"1393 NY-5S","address1":"1393 NY-5S","address2":"Amsterdam, NY 12010, USA","coords":{"lat":42.92888622336857,"lng":-74.20202863558198},"placeId":"ChIJZdIkPO5h3okRNOVis2BzrFc"},
-          {"title":"8 Empire Dr","address1":"8 Empire Dr","address2":"Rensselaer, NY 12144, USA","coords":{"lat":42.6321474429335,"lng":-73.70174712209013},"placeId":"ChIJs7_FpswJ3okRlT61oIcLjRg"},
-          {"title":"5779 NY-80","address1":"5779 NY-80","address2":"Tully, NY 13159, USA","coords":{"lat":42.79934037650686,"lng":-76.11981466441803},"placeId":"ChIJK7VJUCUY2okRoFMx8_fw-qc"},
-          {"title":"4 Mang Dr","address1":"4 Mang Dr","address2":"Sidney, NY 13838, USA","coords":{"lat":42.29879305685372,"lng":-75.40927572209013},"placeId":"ChIJT5Kd9mqh24kRcW6Kgo-EBMk"},
-          {"title":"1384 NY-23","address1":"1384 NY-23","address2":"Craryville, NY 12521, USA","coords":{"lat":42.18596884292204,"lng":-73.61477219325408},"placeId":"ChIJOX-xBVOO3YkRIYGlxBX-MuM"},
-          {"title":"99 Miller Rd","address1":"99 Miller Rd","address2":"Castleton-On-Hudson, NY 12033, USA","coords":{"lat":42.58064659489945,"lng":-73.68136626441803},"placeId":"ChIJB0oWPuHi3YkRG3flVzMKWeI"},
-          {"title":"3017 Erie Blvd E","address1":"3017 Erie Blvd E","address2":"Syracuse, NY 13224, USA","coords":{"lat":43.05751452389993,"lng":-76.08697649325408},"placeId":"ChIJt6lhvtTy2YkRrN7TaofW3OQ"},
-          {"title":"5280 Willow Pl","address1":"5280 Willow Pl","address2":"Verona, NY 13478, USA","coords":{"lat":43.117616084133815,"lng":-75.59602363558197},"placeId":"ChIJxTMZ88Jz2YkRaWZ_jnihPcs"},
-          {"title":"201 Woods Park Drive","address1":"201 Woods Park Drive","address2":"New Hartford, NY 13413, USA","coords":{"lat":43.09142720515106,"lng":-75.3293452932541},"placeId":"ChIJi2MHs8JB2YkRquTb5VWGSy4"},
-          {"title":"100 Marginal Rd","address1":"100 Marginal Rd","address2":"Herkimer, NY 13350, USA","coords":{"lat":43.01883353518345,"lng":-74.99132533558196},"placeId":"ChIJMS3ECphM2YkRaB8xEHYzqb4"},
-          {"title":"1442 Western Ave","address1":"1442 Western Ave","address2":"Albany, NY 12203, USA","coords":{"lat":42.67907105608808,"lng":-73.83616419325409},"placeId":"ChIJZ17Y2CsL3okRUIEzydKN2tc"},
-          {"title":"4 S Putt Corners Rd","address1":"4 S Putt Corners Rd","address2":"New Paltz, NY 12561, USA","coords":{"lat":41.74072771833527,"lng":-74.06682736441802},"placeId":"ChIJZ_v_loQi3YkRRDWbam4vbrE"},
-          {"title":"Front Street","address1":"Front St","address2":"Binghamton, NY, USA","coords":{"lat":42.11151780837158,"lng":-75.91046749325409},"placeId":"Eh1Gcm9udCBTdCwgQmluZ2hhbXRvbiwgTlksIFVTQSIuKiwKFAoSCW0l5nF379qJEU0s8JS8dtyOEhQKEgnRt63fcu_aiRF_M-33A5ePBg"},
-          {"title":"26 River St","address1":"26 River St","address2":"Cortland, NY 13045, USA","coords":{"lat":42.60724728122174,"lng":-76.1639889932541},"placeId":"ChIJHQ-hH3dr2okRTDgnN1f-cas"},
-          {"title":"650 Old Front St","address1":"650 Old Front St","address2":"Binghamton, NY 13905, USA","coords":{"lat":42.12447058467635,"lng":-75.90917436441804},"placeId":"ChIJUQvdt43v2okR1RmqWfTXbzY"},
-          {"title":"42 Finney Blvd","address1":"42 Finney Blvd","address2":"Malone, NY 12953, USA","coords":{"lat":44.8481865137372,"lng":-74.30016962698365},"placeId":"ChIJu8kLGoLyy0wRMTjbSTGzK3k"},
-          {"title":"4677 Blue Mountain Rd","address1":"4677 Blue Mountain Rd","address2":"St Regis Falls, NY 12980, USA","coords":{"lat":44.59532334097211,"lng":-74.50191348650817},"placeId":"ChIJGUyC9KKDy0wRWucbm26vFe4"},
-          {"title":"7575 US-11","address1":"7575 US-11","address2":"Potsdam, NY 13676, USA","coords":{"lat":44.668427488981,"lng":-75.02097804603271},"placeId":"ChIJPxZuRh9ezEwRDj1UBUrQVgo"},
-          {"title":"325 E Orvis St","address1":"325 E Orvis St","address2":"Massena, NY 13662, USA","coords":{"lat":44.934395011557044,"lng":-74.87310025277861},"placeId":"ChIJJYVNYCo-zEwR6-B-NTACvhw"},
-          {"title":"7129 U.S. 9","address1":"7129 U.S. 9","address2":"Plattsburgh, NY 12901, USA","coords":{"lat":44.72700065085045,"lng":-73.43707974907379},"placeId":"ChIJdeHHSdY4ykwRoXYCWlWoa3k"},
-          {"title":"5239 NY-86 Scenic","address1":"5239 NY-86 Scenic","address2":"Wilmington, NY 12997, USA","coords":{"lat":44.365174273860205,"lng":-73.84167631349182},"placeId":"ChIJq6qa5fv7ykwR__7yX42cN6Q"},
-          {"title":"445 Lake Flower Ave","address1":"445 Lake Flower Ave","address2":"Saranac Lake, NY 12983, USA","coords":{"lat":44.316020932689526,"lng":-74.11998712883607},"placeId":"ChIJUV0O3Bcby0wR4wjQBgWqVJs"},
-          {"title":"7 Springfield Rd","address1":"7 Springfield Rd","address2":"Upper Jay, NY 12987, USA","coords":{"lat":44.336262431691615,"lng":-73.77614804722137},"placeId":"ChIJXcqZPG76ykwR0MPkwwT6NDQ"},
-          {"title":"2983 Wilmington Rd","address1":"2983 Wilmington Rd","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.28569550039468,"lng":-73.96679017116394},"placeId":"ChIJ4-867u3iykwRqd008dxx8dg"},
-          {"title":"2200 Saranac Ave","address1":"2200 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.29361165657799,"lng":-73.99413624662704},"placeId":"ChIJD_DpAmIdy0wRKxFrMFzJMhI"},
-          {"title":"1370 U.S. 9","address1":"1370 U.S. 9","address2":"Schroon Lake, NY 12870, USA","coords":{"lat":43.85565892228061,"lng":-73.7557072558197},"placeId":"ChIJdxA9ZJS0ykwRAH-D_le2ncM"},
-          {"title":"2455 U.S. 9","address1":"2455 U.S. 9","address2":"Schroon Lake, NY 12870, USA","coords":{"lat":43.92455751871676,"lng":-73.74335167301636},"placeId":"ChIJZSbMyoq2ykwRgawRYKoimQM"},
-          {"title":"5481 NY-86","address1":"5481 NY-86","address2":"Wilmington, NY 12997, USA","coords":{"lat":44.37846854970545,"lng":-73.83395944662705},"placeId":"ChIJLW7S-lH5ykwRjSbm_Od3uow"},
-          {"title":"2050 Saranac Ave","address1":"2050 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.29524611335449,"lng":-74.00101163187712},"placeId":"ChIJB7t3kGYdy0wRNX_uz4Yi6ic"},
-          {"title":"2267 Saranac Ave","address1":"2267 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.29360132037387,"lng":-73.99029494662705},"placeId":"ChIJvd14fZ7iykwR0ZAJWPK5oxQ"},
-          {"title":"101 Olympic Dr","address1":"101 Olympic Dr","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.28609452335581,"lng":-73.98671161349182},"placeId":"EioxMDEgT2x5bXBpYyBEciwgTGFrZSBQbGFjaWQsIE5ZIDEyOTQ2LCBVU0EiUBJOCjQKMgn7QKh4heLKTBG7SEUMv-K-KRoeCxDuwe6hARoUChIJiW5lvEviykwRPDjEtRf9lz0MEGUqFAoSCSvjBoKF4spMEfeWZ4PDpguA"},
-          {"title":"2285 Saranac Ave","address1":"2285 Saranac Ave","address2":"Lake Placid, NY 12946, USA","coords":{"lat":44.293493090033806,"lng":-73.98955742698364},"placeId":"ChIJDwSChJ7iykwRCiCNjRH0z_w"},
-          {"title":"260 Burgoyne Rd","address1":"260 Burgoyne Rd","address2":"Ticonderoga, NY 12883, USA","coords":{"lat":43.85828375497147,"lng":-73.42767904418031},"placeId":"ChIJywgaSgCqykwRf-EZVLSFLO0"},
-          {"title":"1144 Wicker St","address1":"1144 Wicker St","address2":"Ticonderoga, NY 12883, USA","coords":{"lat":43.857990881412775,"lng":-73.43628027116394},"placeId":"ChIJF8-GIgOqykwR5hKmyXTIwgU"},
-          {"title":"6 S Shore Rd","address1":"6 S Shore Rd","address2":"Inlet, NY 13360, USA","coords":{"lat":43.7499408031921,"lng":-74.7956016723526},"placeId":"ChIJN2nmerFI34kRnb9JlUBKDOE"},
-          {"title":"4920 NY-28","address1":"4920 NY-28","address2":"Old Forge, NY 13420, USA","coords":{"lat":43.75863166696497,"lng":-74.85903603439331},"placeId":"ChIJdXUNjk5J34kRmDanyhn1Jk4"},
-          {"title":"25 Lake Ave","address1":"25 Lake Ave","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.08308839122679,"lng":-73.78243693313522},"placeId":"ChIJI08y0Nk53okRnfch-cLsNCU"},
-          {"title":"3368 S Broadway","address1":"3368 S Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.05397060612267,"lng":-73.78689543558197},"placeId":"ChIJvwwAz6453okRbwv5iK77luk"},
-          {"title":"232 Broadway","address1":"232 Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.075769659222736,"lng":-73.7860839067459},"placeId":"ChIJBz7uSs453okRtcXKZ_9oFl4"},
-          {"title":"231 Broadway","address1":"231 Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.075789928031895,"lng":-73.78709861408615},"placeId":"ChIJ63P1Qc453okRERimPpxaia8"},
-          {"title":"248 Broadway","address1":"248 Broadway","address2":"Saratoga Springs, NY 12866, USA","coords":{"lat":43.07671203945747,"lng":-73.78601294907381},"placeId":"ChIJ8dEjLc453okRr0v9cHXhPMo"},
-          {"title":"2961 U.S. 9","address1":"2961 U.S. 9","address2":"Ballston Spa, NY 12020, USA","coords":{"lat":43.027579773742225,"lng":-73.7913359067459},"placeId":"ChIJlbbXGiE53okRjhqYJnvsHLs"},
-          {"title":"216 Corinth Rd","address1":"216 Corinth Rd","address2":"Queensbury, NY 12804, USA","coords":{"lat":43.297145541988,"lng":-73.68286480304107},"placeId":"ChIJ4fS7onXO34kR54tNtVgTNYs"},
-          {"title":"21 Big Boom Rd","address1":"21 Big Boom Rd","address2":"Queensbury, NY 12804, USA","coords":{"lat":43.296332971277415,"lng":-73.67676126441803},"placeId":"ChIJ_7zQDuDN34kR7qDtjMissd4"},
-          {"title":"1660 U.S. 9","address1":"1660 U.S. 9","address2":"South Glens Falls, NY 12803, USA","coords":{"lat":43.27615989380887,"lng":-73.64639359325407},"placeId":"ChIJMz2gigzS34kRmJ1hh8ZX_90"},
-          {"title":"547 Aviation Rd","address1":"547 Aviation Rd","address2":"Glens Falls, NY 12804, USA","coords":{"lat":43.33032520386392,"lng":-73.67934627546309},"placeId":"ChIJ55_Zh0nO34kR9wGCkuCJaNg"},
-          {"title":"931 U.S. 9","address1":"931 U.S. 9","address2":"Queensbury, NY 12804, USA","coords":{"lat":43.33776693639155,"lng":-73.68014219140167},"placeId":"ChIJqSgDVbTP34kR35onWtfS4ms"},
-          {"title":"7552 Court St","address1":"7552 Court St","address2":"Elizabethtown, NY 12932, USA","coords":{"lat":44.21405322703073,"lng":-73.59441364907379},"placeId":"ChIJEwLIKRqTykwROA8yT1Zl4xM"},
-          {"title":"963 Friends Lake Rd","address1":"963 Friends Lake Rd","address2":"Chestertown, NY 12817, USA","coords":{"lat":43.64116791904849,"lng":-73.8518925932541},"placeId":"ChIJjbyIJEiT34kRTFEkz11t6o4"},
-          {"title":"1454 U.S. 9","address1":"1454 U.S. 9","address2":"Lake George, NY 12845, USA","coords":{"lat":43.366551318291286,"lng":-73.69771165092621},"placeId":"ChIJLeLR04LP34kRLeT3JhgCvDw"},
-          {"title":"17 Holland St","address1":"17 Holland St","address2":"Alexandria Bay, NY 13607, USA","coords":{"lat":44.33910835194046,"lng":-75.91537717294692},"placeId":"ChIJSy-Hczg5zUwRwMlTVxfPvzg"},
-          {"title":"52 Pulaski St","address1":"52 Pulaski St","address2":"Altmar, NY 13302, USA","coords":{"lat":43.51457852268111,"lng":-76.00489434788514},"placeId":"ChIJe1HhY5e02YkR8yIpt035WPU"},
-          {"title":"25940 US-11","address1":"25940 US-11","address2":"Evans Mills, NY 13637, USA","coords":{"lat":44.04273695552329,"lng":-75.83763873558196},"placeId":"ChIJiQaqQWJ52IkRbN3TnCf5nBg"},
-          {"title":"24019 NY-342","address1":"24019 NY-342","address2":"Watertown, NY 13601, USA","coords":{"lat":44.04305262892641,"lng":-75.89384963558197},"placeId":"ChIJDyjaHAR62IkRJ8l3hZPOhI4"},
-          {"title":"110 Commerce Park Dr","address1":"110 Commerce Park Dr","address2":"Watertown, NY 13601, USA","coords":{"lat":43.97803619924593,"lng":-75.93993078220902},"placeId":"ChIJHZVKctZv2IkRtniINY_k6QQ"},
-          {"title":"1190 Arsenal St","address1":"1190 Arsenal St","address2":"Watertown, NY 13601, USA","coords":{"lat":43.97751619042204,"lng":-75.9416086871025},"placeId":"ChIJzz8fttVv2IkRTwMhGKjLVOg"},
-          {"title":"21000 NY-3","address1":"21000 NY-3","address2":"Watertown, NY 13601, USA","coords":{"lat":43.9744324520725,"lng":-75.95242116441803},"placeId":"ChIJRSNweixu2IkR9ar7BNZ80nU"},
-          {"title":"300 Washington St","address1":"300 Washington St","address2":"Watertown, NY 13601, USA","coords":{"lat":43.971789666866684,"lng":-75.91176841349181},"placeId":"ChIJKz4HTuNv2IkRi_reQUuqOEE"},
-          {"title":"13337 County Rd 123","address1":"13337 County Rd 123","address2":"Henderson Harbor, NY 13651, USA","coords":{"lat":43.860284272894084,"lng":-76.20085632331352},"placeId":"ChIJS6WAMPU92IkREpyaGxWdyTw"},
-          {"title":"615 Franklin St","address1":"615 Franklin St","address2":"Ogdensburg, NY 13669, USA","coords":{"lat":44.6947791216915,"lng":-75.48746166627046},"placeId":"ChIJU5uY2j6qzUwRetRYGZ51NCc"},
-          {"title":"5875 Carmenica Dr","address1":"5875 Carmenica Dr","address2":"Cicero, NY 13039, USA","coords":{"lat":43.18185787546972,"lng":-76.11458916627045},"placeId":"ChIJx_gltWjr2YkReOIVQqUXqoU"},
-          {"title":"Aartpark Hotel Inn at Lewiston","address1":"280 Portage Rd","address2":"Lewiston, NY 14092, USA","coords":{"lat":43.170166222583234,"lng":-79.03217263558197},"placeId":"ChIJBceLCu1d04kRCMG-hI-OMw0"},
-          {"title":"Holiday Inn Niagara Falls-Scenic Downtown, an IHG Hotel","address1":"114 Buffalo Ave","address2":"Niagara Falls, NY 14303, USA","coords":{"lat":43.08376369225502,"lng":-79.06112636441803},"placeId":"ChIJO3aQb0tD04kRSHCcrZgGHcE"},
-          {"title":"10111 Niagara Falls Blvd","address1":"10111 Niagara Falls Blvd","address2":"Niagara Falls, NY 14304, USA","coords":{"lat":43.0975408986408,"lng":-78.9461455048935},"placeId":"ChIJ_4RmUaFo04kRFCsxuYHJQnI"},
-          {"title":"100 Whitehaven Rd","address1":"100 Whitehaven Rd","address2":"Grand Island, NY 14072, USA","coords":{"lat":43.02133542470927,"lng":-78.89633204113922},"placeId":"ChIJRatIQJ1u04kRiiiBRpt1Kis"},
-          {"title":"551 S Transit St","address1":"551 S Transit St","address2":"Lockport, NY 14094, USA","coords":{"lat":43.152203331839,"lng":-78.69808083187712},"placeId":"ChIJb7xC8tR404kRfahVwDLfwS0"},
-          {"title":"1080 Sheridan Dr","address1":"1080 Sheridan Dr","address2":"Tonawanda, NY 14150, USA","coords":{"lat":42.98113386658345,"lng":-78.89396950118866},"placeId":"ChIJm8ShD_hs04kRuVIdAGp-qVQ"},
-          {"title":"1288 Sheridan Dr","address1":"1288 Sheridan Dr","address2":"Kenmore, NY 14217, USA","coords":{"lat":42.98120950397178,"lng":-78.88753826441801},"placeId":"ChIJKVHHi1Vs04kR3pqBh-o4SrE"},
-          {"title":"2142 Niagara Falls Blvd","address1":"2142 Niagara Falls Blvd","address2":"Tonawanda, NY 14150, USA","coords":{"lat":43.01265651530297,"lng":-78.82307871838533},"placeId":"ChIJdb0SjB1y04kRX9PJryksCj0"},
-          {"title":"1951 Niagara Falls Blvd","address1":"1951 Niagara Falls Blvd","address2":"Buffalo, NY 14228, USA","coords":{"lat":43.00778446569708,"lng":-78.82100285092619},"placeId":"ChIJJbxk_Rty04kRLZh283jzywE"},
-          {"title":"1120 Niagara Falls Blvd","address1":"1120 Niagara Falls Blvd","address2":"Tonawanda, NY 14150, USA","coords":{"lat":42.984721831952946,"lng":-78.82340554907378},"placeId":"ChIJvRUafW9y04kRtZ_yAOuEgD4"},
-          {"title":"785 Niagara Falls Blvd","address1":"785 Niagara Falls Blvd","address2":"Amherst, NY 14226, USA","coords":{"lat":42.97546328220374,"lng":-78.82249182579498},"placeId":"ChIJr3-SEmJy04kR25Le4K6Gd5U"},
-          {"title":"1 Flint Rd","address1":"1 Flint Rd","address2":"Buffalo, NY 14226, USA","coords":{"lat":42.99045159423194,"lng":-78.79072655886077},"placeId":"ChIJr9vGfLVz04kRrYPq-WSZZHs"},
-          {"title":"4414 Southwestern Blvd","address1":"4414 Southwestern Blvd","address2":"Hamburg, NY 14075, USA","coords":{"lat":42.764932642121316,"lng":-78.82345716627043},"placeId":"ChIJWX34D0cF04kRUkpxzXmdXFQ"},
-          {"title":"3940 Southwestern Blvd","address1":"3940 Southwestern Blvd","address2":"Orchard Park, NY 14127, USA","coords":{"lat":42.77682530519221,"lng":-78.79387223372954},"placeId":"ChIJqfVTmX8F04kRZVGgztyMcic"},
-          {"title":"9159 Erie Rd","address1":"9159 Erie Rd","address2":"Angola, NY 14006, USA","coords":{"lat":42.635145598940746,"lng":-79.0494032509262},"placeId":"ChIJZcoEzZbf0okRpt8ACPljhY8"},
-          {"title":"7592 US-20","address1":"7592 US-20","address2":"Westfield, NY 14787, USA","coords":{"lat":42.33669479989578,"lng":-79.55417987976227},"placeId":"ChIJI_X6ZptILYgRxIgmlTtZYTI"},
-          {"title":"620 Fairmount Ave","address1":"620 Fairmount Ave","address2":"Jamestown, NY 14701, USA","coords":{"lat":42.09767575688613,"lng":-79.27518150674591},"placeId":"ChIJC_CBJm6p0okRsaJe9wwHDtU"},
-          {"title":"3234 NY-417","address1":"3234 NY-417","address2":"Olean, NY 14760, USA","coords":{"lat":42.079766495880655,"lng":-78.47709497916794},"placeId":"ChIJX0NtXHh60okRrMd69LtH5xs"},
-          {"title":"11368 Maple Ridge Rd","address1":"11368 Maple Ridge Rd","address2":"Medina, NY 14103, USA","coords":{"lat":43.20689369704575,"lng":-78.388527828207},"placeId":"ChIJmxbNYAZ21IkR2oMd4zRl6eY"},
-          {"title":"1273 Chili Ave","address1":"1273 Chili Ave","address2":"Rochester, NY 14624, USA","coords":{"lat":43.13809769489417,"lng":-77.66877383558197},"placeId":"ChIJsxgpnEOz1okR-v4tHJNxtFw"},
-          {"title":"3990 W Henrietta Rd","address1":"3990 W Henrietta Rd","address2":"Rochester, NY 14623, USA","coords":{"lat":43.072895960227484,"lng":-77.6438247803566},"placeId":"ChIJA2qNYYVL0YkRCPOEJkBAvI8"},
-          {"title":"1157 NY-36","address1":"1157 NY-36","address2":"Hornell, NY 14843, USA","coords":{"lat":42.36723341575948,"lng":-77.67549853372957},"placeId":"ChIJZ5tnRhOa0YkR1c4Ik08obuI"},
-          {"title":"55 N Main St","address1":"55 N Main St","address2":"Perry, NY 14530, USA","coords":{"lat":42.72001708846525,"lng":-78.00129714722135},"placeId":"ChIJy8rCY5TZ04kRGPfgzeV9gFc"},
-          {"title":"5584 US-20A","address1":"5584 US-20A","address2":"Warsaw, NY 14569, USA","coords":{"lat":42.74545939324573,"lng":-78.1124471509262},"placeId":"ChIJ1bw0GCvF04kRaf1JRj0tZQE"},
-          {"title":"1980 E Main St","address1":"1980 E Main St","address2":"Falconer, NY 14733, USA","coords":{"lat":42.12748668738574,"lng":-79.19121481468049},"placeId":"ChIJ8cMCivql0okRvcjL_wvTGCQ"},
-          {"title":"333 W Morris St","address1":"333 W Morris St","address2":"Bath, NY 14810, USA","coords":{"lat":42.33697524049414,"lng":-77.33224682209014},"placeId":"ChIJcfyFzUqu0YkR66poSD9T_2w"},
-          {"title":"3325 S Main St","address1":"3325 S Main St","address2":"Horseheads, NY 14845, USA","coords":{"lat":42.15498130944904,"lng":-76.81564541600798},"placeId":"ChIJP3ik9XFq0IkRZOoA9dq5Whw"},
-          {"title":"871 County Rd 64","address1":"871 County Rd 64","address2":"Elmira, NY 14903, USA","coords":{"lat":42.155260461037926,"lng":-76.87907034847944},"placeId":"ChIJ50_mywVB0IkRx-6gsTo82iU"},
-          {"title":"200 Robert Dann Dr","address1":"200 Robert Dann Dr","address2":"Painted Post, NY 14870, USA","coords":{"lat":42.15442139682012,"lng":-77.11006067790984},"placeId":"ChIJfZCdmRhK0IkRYCOI_fV25Fk"},
-          {"title":"13550 W Schutt Rd","address1":"13550 W Schutt Rd","address2":"Chaffee, NY 14030, USA","coords":{"lat":42.5417801483,"lng":-78.4797163509262},"placeId":"ChIJcx87w3ZS0okROd1FOGiXbxA"},
-          {"title":"7463 NY-96","address1":"7463 NY-96","address2":"Victor, NY 14564, USA","coords":{"lat":43.006854301565696,"lng":-77.44532642209016},"placeId":"ChIJpYLNO2ox0YkRICxtH3skErA"},
-          {"title":"370 W Morris St","address1":"370 W Morris St","address2":"Bath, NY 14810, USA","coords":{"lat":42.34065785149901,"lng":-77.33506668161466},"placeId":"ChIJyZaBe7Ov0YkRbqsrSQzbEH8"},
-          {"title":"9050 NY-34","address1":"9050 NY-34","address2":"Weedsport, NY 13166, USA","coords":{"lat":43.05559571587862,"lng":-76.55892409140166},"placeId":"ChIJj8c28_JT14kRdh70tMCXUoE"},
-          {"title":"1966 NY-5","address1":"1966 NY-5","address2":"Seneca Falls, NY 13148, USA","coords":{"lat":42.902486186280086,"lng":-76.83374232023775},"placeId":"ChIJP0IesCXI0IkRrqmwveQSEBQ"},
-          {"title":"650 Old Front St","address1":"650 Old Front St","address2":"Binghamton, NY 13905, USA","coords":{"lat":42.124532006324905,"lng":-75.90931383928681},"placeId":"ChIJUQvdt43v2okR1RmqWfTXbzY"},
-          {"title":"2382 W Genesee Turnpike","address1":"2382 W Genesee Turnpike","address2":"Camillus, NY 13031, USA","coords":{"lat":43.035105763135014,"lng":-76.34321373558197},"placeId":"ChIJZ7QM_0L52YkR6w3RNmOUWyg"},
-          {"title":"131 Downer St","address1":"131 Downer St","address2":"Baldwinsville, NY 13027, USA","coords":{"lat":43.150535802944,"lng":-76.34470830118866},"placeId":"ChIJ05x-QJLk2YkRlot0lsTLWt0"},
-          {"title":"All Seasons Inn","address1":"All Seasons Inn","address2":"5422 NY-104, Oswego, NY 13126, USA","coords":{"lat":43.46614407941244,"lng":-76.42113295277863},"placeId":"ChIJtZAz3K_X2YkR6w_65HVz7E4"},
-          {"title":"142 Lake St","address1":"142 Lake St","address2":"Penn Yan, NY 14527, USA","coords":{"lat":42.65634454380207,"lng":-77.05469258584444},"placeId":"ChIJKUAMn8zl0IkRg9xWgp5d6Nk"},
-          {"title":"79 Albany St","address1":"79 Albany St","address2":"Cazenovia, NY 13035, USA","coords":{"lat":42.93007963605621,"lng":-75.85301372209015},"placeId":"ChIJ-ZbWowqH2YkR4920aRDstpA"},
-          {"title":"10 Church St","address1":"10 Church St","address2":"Cortland, NY 13045, USA","coords":{"lat":42.60128669465034,"lng":-76.17868901468049},"placeId":"ChIJWfPJVn9s2okRHES1sWB6UwY"},
-          {"title":"4 Mang Dr","address1":"4 Mang Dr","address2":"Sidney, NY 13838, USA","coords":{"lat":42.298734234398275,"lng":-75.4091255183853},"placeId":"ChIJT5Kd9mqh24kRcW6Kgo-EBMk"},
-          {"title":"9090 Mt Belvedere Blvd","address1":"9090 Mt Belvedere Blvd","address2":"Fort Drum, NY 13603, USA","coords":{"lat":44.032006979389685,"lng":-75.80250890080261},"placeId":"EjA5MDkwIE10IEJlbHZlZGVyZSBCbHZkLCBGb3J0IERydW0sIE5ZIDEzNjAzLCBVU0EiURJPCjQKMgkdVlGqBnzYiRH8xZbH44rtaRoeCxDuwe6hARoUChIJa3EhAJR-2IkRSyO80rnSOYMMEIJHKhQKEgnNbcqfrH7YiRHEGbCt0wOWEQ"},
-          {"title":"300 Washington St","address1":"300 Washington St","address2":"Watertown, NY 13601, USA","coords":{"lat":43.97181620899233,"lng":-75.91188106627044},"placeId":"ChIJKz4HTuNv2IkRi_reQUuqOEE"},
-          {"title":"3723 NY-13","address1":"3723 NY-13","address2":"Pulaski, NY 13142, USA","coords":{"lat":43.553516936745694,"lng":-76.11125257790984},"placeId":"ChIJJcqTyTU12IkRbo87j0RHEKU"},
-          {"title":"5920 Airport Rd","address1":"5920 Airport Rd","address2":"Oriskany, NY 13424, USA","coords":{"lat":43.14815550255018,"lng":-75.37819085092619},"placeId":"ChIJ49zyvdFq2YkRVp3fUOvBQt4"},
-          {"title":"6067 NY-12","address1":"6067 NY-12","address2":"Norwich, NY 13815, USA","coords":{"lat":42.5452276979565,"lng":-75.52565479140168},"placeId":"ChIJY7P4TB6424kRE_O0Wzh_f34"}
-        ],
-        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
-        "mapsApiKey": "AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs"
-      };
+        const CONFIGURATION = {
+            "locations": [
+                { "title": "Hampton Inn Oneonta", "address1": "225 River St", "address2": "Oneonta, NY 13820, USA", "coords": { "lat": 42.44364457680803, "lng": -75.08686156441803 }, "placeId": "ChIJ02pkXD6M24kRb7cdjhkJl5o" },
+                { "title": "236 Edgemere St", "address1": "236 Edgemere St", "address2": "Montauk, NY 11954, USA", "coords": { "lat": 41.048357701441496, "lng": -71.94962536508179 }, "placeId": "ChIJj8K_A7NU74kRcyS0znikFRI" },
+                { "title": "1655 County Rd 39", "address1": "1655 County Rd 39", "address2": "Southampton, NY 11968, USA", "coords": { "lat": 40.89593366593762, "lng": -72.4538054576721 }, "placeId": "ChIJ-ei7NTmT6IkR0FrrBKaJH5I" },
+                { "title": "110 Vanderbilt Motor Pkwy", "address1": "110 Vanderbilt Motor Pkwy", "address2": "Brentwood, NY 11717, USA", "coords": { "lat": 40.80694189156402, "lng": -73.26459543068846 }, "placeId": "ChIJZUG6gdIx6IkRgFFerSs5Fp0" },
+                { "title": "2695 NY-112", "address1": "2695 NY-112", "address2": "Medford, NY 11763, USA", "coords": { "lat": 40.821711078899746, "lng": -72.99712694110451 }, "placeId": "ChIJkS5obglG6IkRBo4kKh8qSHY" },
+                { "title": "451 E Main St", "address1": "451 E Main St", "address2": "Riverhead, NY 11901, USA", "coords": { "lat": 40.918371839243115, "lng": -72.65585312209015 }, "placeId": "ChIJaVCxsC6L6IkREotDo77UAw4" },
+                { "title": "10 Aero Rd", "address1": "10 Aero Rd", "address2": "Bohemia, NY 11716, USA", "coords": { "lat": 40.77941431388933, "lng": -73.09520468650818 }, "placeId": "ChIJJ3FWFSw26IkRzGm6411OQHw" },
+                { "title": "5080 Sunrise Hwy", "address1": "5080 Sunrise Hwy", "address2": "Massapequa Park, NY 11762, USA", "coords": { "lat": 40.6775876454487, "lng": -73.44580902209013 }, "placeId": "ChIJQzClIJ7V6YkRt9SbTNJSjvc" },
+                { "title": "1000 Sunrise Hwy", "address1": "1000 Sunrise Hwy", "address2": "Rockville Centre, NY 11570, USA", "coords": { "lat": 40.656633231798295, "lng": -73.62345969325409 }, "placeId": "ChIJzT_Tw2V7wokRjGKmD2n_piE" },
+                { "title": "173-144 Liberty Ave", "address1": "173-144 Liberty Ave", "address2": "Jamaica, NY 11433, USA", "coords": { "lat": 40.70464076272044, "lng": -73.78431417055225 }, "placeId": "EisxNzMtMTQ0IExpYmVydHkgQXZlLCBKYW1haWNhLCBOWSAxMTQzMywgVVNBIlESTwo0CjIJ9cGJ4CJhwokReLOZrYrV99YaHgsQ7sHuoQEaFAoSCY9vsIslYcKJER0i3Cytlk4lDBCQASoUChIJ2aeqpFZnwokRXLj7B3aHL4M" },
+                { "title": "891 Amsterdam Ave", "address1": "891 Amsterdam Ave", "address2": "New York, NY 10025, USA", "coords": { "lat": 40.79870083776091, "lng": -73.96667557301636 }, "placeId": "ChIJdYnsayT2wokRlmd6rWv7lJw" },
+                { "title": "3070 Webster Ave", "address1": "3070 Webster Ave", "address2": "Bronx, NY 10467, USA", "coords": { "lat": 40.87022052106063, "lng": -73.87786326441804 }, "placeId": "EiYzMDcwIFdlYnN0ZXIgQXZlLCBCcm9ueCwgTlkgMTA0NjcsIFVTQSJREk8KNAoyCV_87DBw88KJEU5BbZBpZNnqGh4LEO7B7qEBGhQKEgkzbdlWE_PCiRHu9TTfxWQBewwQ_hcqFAoSCffMNzB_88KJEUzNnC8VeYAf" },
+                { "title": "23 Centershore Rd", "address1": "23 Centershore Rd", "address2": "Centerport, NY 11721, USA", "coords": { "lat": 40.88843692652713, "lng": -73.37288899325407 }, "placeId": "ChIJhf9g2XUm6IkRLAqQS1rNwWU" },
+                { "title": "1118 36th St", "address1": "1118 36th St", "address2": "Brooklyn, NY 11218, USA", "coords": { "lat": 40.64407964996262, "lng": -73.98796924418028 }, "placeId": "ChIJbQQZ29ZawokRWQegjAjA4wE" },
+                { "title": "Morris Avenue", "address1": "Morris Ave", "address2": "Bronx, NY 10453, USA", "coords": { "lat": 40.85496198795255, "lng": -73.90400456441803 }, "placeId": "EiBNb3JyaXMgQXZlLCBCcm9ueCwgTlkgMTA0NTMsIFVTQSIuKiwKFAoSCZ9KYfdA9MKJEVdbOgErWA9lEhQKEgnDEHS3EvTCiRGwb__Dnzyztg" },
+                { "title": "559 Tuckahoe Rd", "address1": "559 Tuckahoe Rd", "address2": "Yonkers, NY 10710, USA", "coords": { "lat": 40.954496740815834, "lng": -73.84875756441801 }, "placeId": "ChIJpa9DbjbtwokRiVjEtrtQy0U" },
+                { "title": "1053 Northern Blvd", "address1": "1053 Northern Blvd", "address2": "Roslyn, NY 11576, USA", "coords": { "lat": 40.79858611187305, "lng": -73.66424982209014 }, "placeId": "ChIJ7UrWtpqIwokRJ8VDwPrDD3k" },
+                { "title": "600 White Plains Rd", "address1": "600 White Plains Rd", "address2": "Tarrytown, NY 10591, USA", "coords": { "lat": 41.061298999604325, "lng": -73.83736296441802 }, "placeId": "ChIJ5W9wvTOVwokRD5K1QbM-ao0" },
+                { "title": "Holiday Inn Drive", "address1": "Holiday Inn Dr", "address2": "Mt Kisco, NY 10549, USA", "coords": { "lat": 41.219394071119474, "lng": -73.72476994662703 }, "placeId": "EidIb2xpZGF5IElubiBEciwgTXQgS2lzY28sIE5ZIDEwNTQ5LCBVU0EiLiosChQKEgk97t6tErrCiREs4GE77ntpFBIUChIJ41fjKX26wokRnzCCXKGsk_I" },
+                { "title": "329 NY-303", "address1": "329 NY-303", "address2": "Orangeburg, NY 10962, USA", "coords": { "lat": 41.046189850015594, "lng": -73.94383201534424 }, "placeId": "ChIJyaY6b2fpwokRtFKFfii2B74" },
+                { "title": "17 N Airmont Rd", "address1": "17 N Airmont Rd", "address2": "Suffern, NY 10901, USA", "coords": { "lat": 41.11459538783686, "lng": -74.1124235509262 }, "placeId": "ChIJzVdDYE_nwokR3SgOPKDRkUA" },
+                { "title": "7 Peach Lake Rd", "address1": "7 Peach Lake Rd", "address2": "Brewster, NY 10509, USA", "coords": { "lat": 41.38560183712597, "lng": -73.58324752209015 }, "placeId": "Eig3IFBlYWNoIExha2UgUmQsIEJyZXdzdGVyLCBOWSAxMDUwOSwgVVNBIlASTgo0CjIJpX0sSxVT3YkRz9nFH6roMyAaHgsQ7sHuoQEaFAoSCZccFWSlU92JEZBJyere-pIADBAHKhQKEgmnSW0XRlPdiRGElvY9ickaUA" },
+                { "title": "2105 NY-208", "address1": "2105 NY-208", "address2": "Montgomery, NY 12549, USA", "coords": { "lat": 41.51530258958259, "lng": -74.20972956441803 }, "placeId": "ChIJjZJL5Awq3YkRP2VGjQpNMD8" },
+                { "title": "634 Main St", "address1": "634 Main St", "address2": "Peekskill, NY 10566, USA", "coords": { "lat": 41.290631911641505, "lng": -73.92831394110449 }, "placeId": "ChIJdW2toNHIwokRLuN_3lv8b1E" },
+                { "title": "4939 NY-17M", "address1": "4939 NY-17M", "address2": "New Hampton, NY 10958, USA", "coords": { "lat": 41.407997054440656, "lng": -74.41222779325409 }, "placeId": "ChIJdSy50QMyw4kRo_yyRmprb0w" },
+                { "title": "503 Washington Ave", "address1": "503 Washington Ave", "address2": "Kingston, NY 12401, USA", "coords": { "lat": 41.93956025737985, "lng": -74.02941469325408 }, "placeId": "ChIJLdIeBn4P3YkRVKFgKTDOt80" },
+                { "title": "52 Sullivan Ave", "address1": "52 Sullivan Ave", "address2": "Liberty, NY 12754, USA", "coords": { "lat": 41.78345220048859, "lng": -74.72942509325406 }, "placeId": "ChIJUwx761683IkRKYyzNACU3a8" },
+                { "title": "500 Frank Sottile Blvd", "address1": "500 Frank Sottile Blvd", "address2": "Kingston, NY 12401, USA", "coords": { "lat": 41.96985047628031, "lng": -73.98642732209015 }, "placeId": "ChIJCzne-9QI3YkRxXsHGq2VyVk" },
+                { "title": "225 River St", "address1": "225 River St", "address2": "Oneonta, NY 13820, USA", "coords": { "lat": 42.44363073874566, "lng": -75.08681859325408 }, "placeId": "ChIJqVVkXD6M24kRUb7xfIruySI" },
+                { "title": "25 Lakers Ln", "address1": "25 Lakers Ln", "address2": "Cazenovia, NY 13035, USA", "coords": { "lat": 42.92449665694906, "lng": -75.84195456441803 }, "placeId": "ChIJi-zSdXKH2YkRPaIrGqoo810" },
+                { "title": "4758 NY-28", "address1": "4758 NY-28", "address2": "Cooperstown, NY 13326, USA", "coords": { "lat": 42.65343879685655, "lng": -74.96281289325407 }, "placeId": "ChIJM-0ZJ_cH3IkRwyVC7dBl21s" },
+                { "title": "1393 NY-5S", "address1": "1393 NY-5S", "address2": "Amsterdam, NY 12010, USA", "coords": { "lat": 42.92888622336857, "lng": -74.20202863558198 }, "placeId": "ChIJZdIkPO5h3okRNOVis2BzrFc" },
+                { "title": "8 Empire Dr", "address1": "8 Empire Dr", "address2": "Rensselaer, NY 12144, USA", "coords": { "lat": 42.6321474429335, "lng": -73.70174712209013 }, "placeId": "ChIJs7_FpswJ3okRlT61oIcLjRg" },
+                { "title": "5779 NY-80", "address1": "5779 NY-80", "address2": "Tully, NY 13159, USA", "coords": { "lat": 42.79934037650686, "lng": -76.11981466441803 }, "placeId": "ChIJK7VJUCUY2okRoFMx8_fw-qc" },
+                { "title": "4 Mang Dr", "address1": "4 Mang Dr", "address2": "Sidney, NY 13838, USA", "coords": { "lat": 42.29879305685372, "lng": -75.40927572209013 }, "placeId": "ChIJT5Kd9mqh24kRcW6Kgo-EBMk" },
+                { "title": "1384 NY-23", "address1": "1384 NY-23", "address2": "Craryville, NY 12521, USA", "coords": { "lat": 42.18596884292204, "lng": -73.61477219325408 }, "placeId": "ChIJOX-xBVOO3YkRIYGlxBX-MuM" },
+                { "title": "99 Miller Rd", "address1": "99 Miller Rd", "address2": "Castleton-On-Hudson, NY 12033, USA", "coords": { "lat": 42.58064659489945, "lng": -73.68136626441803 }, "placeId": "ChIJB0oWPuHi3YkRG3flVzMKWeI" },
+                { "title": "3017 Erie Blvd E", "address1": "3017 Erie Blvd E", "address2": "Syracuse, NY 13224, USA", "coords": { "lat": 43.05751452389993, "lng": -76.08697649325408 }, "placeId": "ChIJt6lhvtTy2YkRrN7TaofW3OQ" },
+                { "title": "5280 Willow Pl", "address1": "5280 Willow Pl", "address2": "Verona, NY 13478, USA", "coords": { "lat": 43.117616084133815, "lng": -75.59602363558197 }, "placeId": "ChIJxTMZ88Jz2YkRaWZ_jnihPcs" },
+                { "title": "201 Woods Park Drive", "address1": "201 Woods Park Drive", "address2": "New Hartford, NY 13413, USA", "coords": { "lat": 43.09142720515106, "lng": -75.3293452932541 }, "placeId": "ChIJi2MHs8JB2YkRquTb5VWGSy4" },
+                { "title": "100 Marginal Rd", "address1": "100 Marginal Rd", "address2": "Herkimer, NY 13350, USA", "coords": { "lat": 43.01883353518345, "lng": -74.99132533558196 }, "placeId": "ChIJMS3ECphM2YkRaB8xEHYzqb4" },
+                { "title": "1442 Western Ave", "address1": "1442 Western Ave", "address2": "Albany, NY 12203, USA", "coords": { "lat": 42.67907105608808, "lng": -73.83616419325409 }, "placeId": "ChIJZ17Y2CsL3okRUIEzydKN2tc" },
+                { "title": "4 S Putt Corners Rd", "address1": "4 S Putt Corners Rd", "address2": "New Paltz, NY 12561, USA", "coords": { "lat": 41.74072771833527, "lng": -74.06682736441802 }, "placeId": "ChIJZ_v_loQi3YkRRDWbam4vbrE" },
+                { "title": "Front Street", "address1": "Front St", "address2": "Binghamton, NY, USA", "coords": { "lat": 42.11151780837158, "lng": -75.91046749325409 }, "placeId": "Eh1Gcm9udCBTdCwgQmluZ2hhbXRvbiwgTlksIFVTQSIuKiwKFAoSCW0l5nF379qJEU0s8JS8dtyOEhQKEgnRt63fcu_aiRF_M-33A5ePBg" },
+                { "title": "26 River St", "address1": "26 River St", "address2": "Cortland, NY 13045, USA", "coords": { "lat": 42.60724728122174, "lng": -76.1639889932541 }, "placeId": "ChIJHQ-hH3dr2okRTDgnN1f-cas" },
+                { "title": "650 Old Front St", "address1": "650 Old Front St", "address2": "Binghamton, NY 13905, USA", "coords": { "lat": 42.12447058467635, "lng": -75.90917436441804 }, "placeId": "ChIJUQvdt43v2okR1RmqWfTXbzY" },
+                { "title": "42 Finney Blvd", "address1": "42 Finney Blvd", "address2": "Malone, NY 12953, USA", "coords": { "lat": 44.8481865137372, "lng": -74.30016962698365 }, "placeId": "ChIJu8kLGoLyy0wRMTjbSTGzK3k" },
+                { "title": "4677 Blue Mountain Rd", "address1": "4677 Blue Mountain Rd", "address2": "St Regis Falls, NY 12980, USA", "coords": { "lat": 44.59532334097211, "lng": -74.50191348650817 }, "placeId": "ChIJGUyC9KKDy0wRWucbm26vFe4" },
+                { "title": "7575 US-11", "address1": "7575 US-11", "address2": "Potsdam, NY 13676, USA", "coords": { "lat": 44.668427488981, "lng": -75.02097804603271 }, "placeId": "ChIJPxZuRh9ezEwRDj1UBUrQVgo" },
+                { "title": "325 E Orvis St", "address1": "325 E Orvis St", "address2": "Massena, NY 13662, USA", "coords": { "lat": 44.934395011557044, "lng": -74.87310025277861 }, "placeId": "ChIJJYVNYCo-zEwR6-B-NTACvhw" },
+                { "title": "7129 U.S. 9", "address1": "7129 U.S. 9", "address2": "Plattsburgh, NY 12901, USA", "coords": { "lat": 44.72700065085045, "lng": -73.43707974907379 }, "placeId": "ChIJdeHHSdY4ykwRoXYCWlWoa3k" },
+                { "title": "5239 NY-86 Scenic", "address1": "5239 NY-86 Scenic", "address2": "Wilmington, NY 12997, USA", "coords": { "lat": 44.365174273860205, "lng": -73.84167631349182 }, "placeId": "ChIJq6qa5fv7ykwR__7yX42cN6Q" },
+                { "title": "445 Lake Flower Ave", "address1": "445 Lake Flower Ave", "address2": "Saranac Lake, NY 12983, USA", "coords": { "lat": 44.316020932689526, "lng": -74.11998712883607 }, "placeId": "ChIJUV0O3Bcby0wR4wjQBgWqVJs" },
+                { "title": "7 Springfield Rd", "address1": "7 Springfield Rd", "address2": "Upper Jay, NY 12987, USA", "coords": { "lat": 44.336262431691615, "lng": -73.77614804722137 }, "placeId": "ChIJXcqZPG76ykwR0MPkwwT6NDQ" },
+                { "title": "2983 Wilmington Rd", "address1": "2983 Wilmington Rd", "address2": "Lake Placid, NY 12946, USA", "coords": { "lat": 44.28569550039468, "lng": -73.96679017116394 }, "placeId": "ChIJ4-867u3iykwRqd008dxx8dg" },
+                { "title": "2200 Saranac Ave", "address1": "2200 Saranac Ave", "address2": "Lake Placid, NY 12946, USA", "coords": { "lat": 44.29361165657799, "lng": -73.99413624662704 }, "placeId": "ChIJD_DpAmIdy0wRKxFrMFzJMhI" },
+                { "title": "1370 U.S. 9", "address1": "1370 U.S. 9", "address2": "Schroon Lake, NY 12870, USA", "coords": { "lat": 43.85565892228061, "lng": -73.7557072558197 }, "placeId": "ChIJdxA9ZJS0ykwRAH-D_le2ncM" },
+                { "title": "2455 U.S. 9", "address1": "2455 U.S. 9", "address2": "Schroon Lake, NY 12870, USA", "coords": { "lat": 43.92455751871676, "lng": -73.74335167301636 }, "placeId": "ChIJZSbMyoq2ykwRgawRYKoimQM" },
+                { "title": "5481 NY-86", "address1": "5481 NY-86", "address2": "Wilmington, NY 12997, USA", "coords": { "lat": 44.37846854970545, "lng": -73.83395944662705 }, "placeId": "ChIJLW7S-lH5ykwRjSbm_Od3uow" },
+                { "title": "2050 Saranac Ave", "address1": "2050 Saranac Ave", "address2": "Lake Placid, NY 12946, USA", "coords": { "lat": 44.29524611335449, "lng": -74.00101163187712 }, "placeId": "ChIJB7t3kGYdy0wRNX_uz4Yi6ic" },
+                { "title": "2267 Saranac Ave", "address1": "2267 Saranac Ave", "address2": "Lake Placid, NY 12946, USA", "coords": { "lat": 44.29360132037387, "lng": -73.99029494662705 }, "placeId": "ChIJvd14fZ7iykwR0ZAJWPK5oxQ" },
+                { "title": "101 Olympic Dr", "address1": "101 Olympic Dr", "address2": "Lake Placid, NY 12946, USA", "coords": { "lat": 44.28609452335581, "lng": -73.98671161349182 }, "placeId": "EioxMDEgT2x5bXBpYyBEciwgTGFrZSBQbGFjaWQsIE5ZIDEyOTQ2LCBVU0EiUBJOCjQKMgn7QKh4heLKTBG7SEUMv-K-KRoeCxDuwe6hARoUChIJiW5lvEviykwRPDjEtRf9lz0MEGUqFAoSCSvjBoKF4spMEfeWZ4PDpguA" },
+                { "title": "2285 Saranac Ave", "address1": "2285 Saranac Ave", "address2": "Lake Placid, NY 12946, USA", "coords": { "lat": 44.293493090033806, "lng": -73.98955742698364 }, "placeId": "ChIJDwSChJ7iykwRCiCNjRH0z_w" },
+                { "title": "260 Burgoyne Rd", "address1": "260 Burgoyne Rd", "address2": "Ticonderoga, NY 12883, USA", "coords": { "lat": 43.85828375497147, "lng": -73.42767904418031 }, "placeId": "ChIJywgaSgCqykwRf-EZVLSFLO0" },
+                { "title": "1144 Wicker St", "address1": "1144 Wicker St", "address2": "Ticonderoga, NY 12883, USA", "coords": { "lat": 43.857990881412775, "lng": -73.43628027116394 }, "placeId": "ChIJF8-GIgOqykwR5hKmyXTIwgU" },
+                { "title": "6 S Shore Rd", "address1": "6 S Shore Rd", "address2": "Inlet, NY 13360, USA", "coords": { "lat": 43.7499408031921, "lng": -74.7956016723526 }, "placeId": "ChIJN2nmerFI34kRnb9JlUBKDOE" },
+                { "title": "4920 NY-28", "address1": "4920 NY-28", "address2": "Old Forge, NY 13420, USA", "coords": { "lat": 43.75863166696497, "lng": -74.85903603439331 }, "placeId": "ChIJdXUNjk5J34kRmDanyhn1Jk4" },
+                { "title": "25 Lake Ave", "address1": "25 Lake Ave", "address2": "Saratoga Springs, NY 12866, USA", "coords": { "lat": 43.08308839122679, "lng": -73.78243693313522 }, "placeId": "ChIJI08y0Nk53okRnfch-cLsNCU" },
+                { "title": "3368 S Broadway", "address1": "3368 S Broadway", "address2": "Saratoga Springs, NY 12866, USA", "coords": { "lat": 43.05397060612267, "lng": -73.78689543558197 }, "placeId": "ChIJvwwAz6453okRbwv5iK77luk" },
+                { "title": "232 Broadway", "address1": "232 Broadway", "address2": "Saratoga Springs, NY 12866, USA", "coords": { "lat": 43.075769659222736, "lng": -73.7860839067459 }, "placeId": "ChIJBz7uSs453okRtcXKZ_9oFl4" },
+                { "title": "231 Broadway", "address1": "231 Broadway", "address2": "Saratoga Springs, NY 12866, USA", "coords": { "lat": 43.075789928031895, "lng": -73.78709861408615 }, "placeId": "ChIJ63P1Qc453okRERimPpxaia8" },
+                { "title": "248 Broadway", "address1": "248 Broadway", "address2": "Saratoga Springs, NY 12866, USA", "coords": { "lat": 43.07671203945747, "lng": -73.78601294907381 }, "placeId": "ChIJ8dEjLc453okRr0v9cHXhPMo" },
+                { "title": "2961 U.S. 9", "address1": "2961 U.S. 9", "address2": "Ballston Spa, NY 12020, USA", "coords": { "lat": 43.027579773742225, "lng": -73.7913359067459 }, "placeId": "ChIJlbbXGiE53okRjhqYJnvsHLs" },
+                { "title": "216 Corinth Rd", "address1": "216 Corinth Rd", "address2": "Queensbury, NY 12804, USA", "coords": { "lat": 43.297145541988, "lng": -73.68286480304107 }, "placeId": "ChIJ4fS7onXO34kR54tNtVgTNYs" },
+                { "title": "21 Big Boom Rd", "address1": "21 Big Boom Rd", "address2": "Queensbury, NY 12804, USA", "coords": { "lat": 43.296332971277415, "lng": -73.67676126441803 }, "placeId": "ChIJ_7zQDuDN34kR7qDtjMissd4" },
+                { "title": "1660 U.S. 9", "address1": "1660 U.S. 9", "address2": "South Glens Falls, NY 12803, USA", "coords": { "lat": 43.27615989380887, "lng": -73.64639359325407 }, "placeId": "ChIJMz2gigzS34kRmJ1hh8ZX_90" },
+                { "title": "547 Aviation Rd", "address1": "547 Aviation Rd", "address2": "Glens Falls, NY 12804, USA", "coords": { "lat": 43.33032520386392, "lng": -73.67934627546309 }, "placeId": "ChIJ55_Zh0nO34kR9wGCkuCJaNg" },
+                { "title": "931 U.S. 9", "address1": "931 U.S. 9", "address2": "Queensbury, NY 12804, USA", "coords": { "lat": 43.33776693639155, "lng": -73.68014219140167 }, "placeId": "ChIJqSgDVbTP34kR35onWtfS4ms" },
+                { "title": "7552 Court St", "address1": "7552 Court St", "address2": "Elizabethtown, NY 12932, USA", "coords": { "lat": 44.21405322703073, "lng": -73.59441364907379 }, "placeId": "ChIJEwLIKRqTykwROA8yT1Zl4xM" },
+                { "title": "963 Friends Lake Rd", "address1": "963 Friends Lake Rd", "address2": "Chestertown, NY 12817, USA", "coords": { "lat": 43.64116791904849, "lng": -73.8518925932541 }, "placeId": "ChIJjbyIJEiT34kRTFEkz11t6o4" },
+                { "title": "1454 U.S. 9", "address1": "1454 U.S. 9", "address2": "Lake George, NY 12845, USA", "coords": { "lat": 43.366551318291286, "lng": -73.69771165092621 }, "placeId": "ChIJLeLR04LP34kRLeT3JhgCvDw" },
+                { "title": "17 Holland St", "address1": "17 Holland St", "address2": "Alexandria Bay, NY 13607, USA", "coords": { "lat": 44.33910835194046, "lng": -75.91537717294692 }, "placeId": "ChIJSy-Hczg5zUwRwMlTVxfPvzg" },
+                { "title": "52 Pulaski St", "address1": "52 Pulaski St", "address2": "Altmar, NY 13302, USA", "coords": { "lat": 43.51457852268111, "lng": -76.00489434788514 }, "placeId": "ChIJe1HhY5e02YkR8yIpt035WPU" },
+                { "title": "25940 US-11", "address1": "25940 US-11", "address2": "Evans Mills, NY 13637, USA", "coords": { "lat": 44.04273695552329, "lng": -75.83763873558196 }, "placeId": "ChIJiQaqQWJ52IkRbN3TnCf5nBg" },
+                { "title": "24019 NY-342", "address1": "24019 NY-342", "address2": "Watertown, NY 13601, USA", "coords": { "lat": 44.04305262892641, "lng": -75.89384963558197 }, "placeId": "ChIJDyjaHAR62IkRJ8l3hZPOhI4" },
+                { "title": "110 Commerce Park Dr", "address1": "110 Commerce Park Dr", "address2": "Watertown, NY 13601, USA", "coords": { "lat": 43.97803619924593, "lng": -75.93993078220902 }, "placeId": "ChIJHZVKctZv2IkRtniINY_k6QQ" },
+                { "title": "1190 Arsenal St", "address1": "1190 Arsenal St", "address2": "Watertown, NY 13601, USA", "coords": { "lat": 43.97751619042204, "lng": -75.9416086871025 }, "placeId": "ChIJzz8fttVv2IkRTwMhGKjLVOg" },
+                { "title": "21000 NY-3", "address1": "21000 NY-3", "address2": "Watertown, NY 13601, USA", "coords": { "lat": 43.9744324520725, "lng": -75.95242116441803 }, "placeId": "ChIJRSNweixu2IkR9ar7BNZ80nU" },
+                { "title": "300 Washington St", "address1": "300 Washington St", "address2": "Watertown, NY 13601, USA", "coords": { "lat": 43.971789666866684, "lng": -75.91176841349181 }, "placeId": "ChIJKz4HTuNv2IkRi_reQUuqOEE" },
+                { "title": "13337 County Rd 123", "address1": "13337 County Rd 123", "address2": "Henderson Harbor, NY 13651, USA", "coords": { "lat": 43.860284272894084, "lng": -76.20085632331352 }, "placeId": "ChIJS6WAMPU92IkREpyaGxWdyTw" },
+                { "title": "615 Franklin St", "address1": "615 Franklin St", "address2": "Ogdensburg, NY 13669, USA", "coords": { "lat": 44.6947791216915, "lng": -75.48746166627046 }, "placeId": "ChIJU5uY2j6qzUwRetRYGZ51NCc" },
+                { "title": "5875 Carmenica Dr", "address1": "5875 Carmenica Dr", "address2": "Cicero, NY 13039, USA", "coords": { "lat": 43.18185787546972, "lng": -76.11458916627045 }, "placeId": "ChIJx_gltWjr2YkReOIVQqUXqoU" },
+                { "title": "Aartpark Hotel Inn at Lewiston", "address1": "280 Portage Rd", "address2": "Lewiston, NY 14092, USA", "coords": { "lat": 43.170166222583234, "lng": -79.03217263558197 }, "placeId": "ChIJBceLCu1d04kRCMG-hI-OMw0" },
+                { "title": "Holiday Inn Niagara Falls-Scenic Downtown, an IHG Hotel", "address1": "114 Buffalo Ave", "address2": "Niagara Falls, NY 14303, USA", "coords": { "lat": 43.08376369225502, "lng": -79.06112636441803 }, "placeId": "ChIJO3aQb0tD04kRSHCcrZgGHcE" },
+                { "title": "10111 Niagara Falls Blvd", "address1": "10111 Niagara Falls Blvd", "address2": "Niagara Falls, NY 14304, USA", "coords": { "lat": 43.0975408986408, "lng": -78.9461455048935 }, "placeId": "ChIJ_4RmUaFo04kRFCsxuYHJQnI" },
+                { "title": "100 Whitehaven Rd", "address1": "100 Whitehaven Rd", "address2": "Grand Island, NY 14072, USA", "coords": { "lat": 43.02133542470927, "lng": -78.89633204113922 }, "placeId": "ChIJRatIQJ1u04kRiiiBRpt1Kis" },
+                { "title": "551 S Transit St", "address1": "551 S Transit St", "address2": "Lockport, NY 14094, USA", "coords": { "lat": 43.152203331839, "lng": -78.69808083187712 }, "placeId": "ChIJb7xC8tR404kRfahVwDLfwS0" },
+                { "title": "1080 Sheridan Dr", "address1": "1080 Sheridan Dr", "address2": "Tonawanda, NY 14150, USA", "coords": { "lat": 42.98113386658345, "lng": -78.89396950118866 }, "placeId": "ChIJm8ShD_hs04kRuVIdAGp-qVQ" },
+                { "title": "1288 Sheridan Dr", "address1": "1288 Sheridan Dr", "address2": "Kenmore, NY 14217, USA", "coords": { "lat": 42.98120950397178, "lng": -78.88753826441801 }, "placeId": "ChIJKVHHi1Vs04kR3pqBh-o4SrE" },
+                { "title": "2142 Niagara Falls Blvd", "address1": "2142 Niagara Falls Blvd", "address2": "Tonawanda, NY 14150, USA", "coords": { "lat": 43.01265651530297, "lng": -78.82307871838533 }, "placeId": "ChIJdb0SjB1y04kRX9PJryksCj0" },
+                { "title": "1951 Niagara Falls Blvd", "address1": "1951 Niagara Falls Blvd", "address2": "Buffalo, NY 14228, USA", "coords": { "lat": 43.00778446569708, "lng": -78.82100285092619 }, "placeId": "ChIJJbxk_Rty04kRLZh283jzywE" },
+                { "title": "1120 Niagara Falls Blvd", "address1": "1120 Niagara Falls Blvd", "address2": "Tonawanda, NY 14150, USA", "coords": { "lat": 42.984721831952946, "lng": -78.82340554907378 }, "placeId": "ChIJvRUafW9y04kRtZ_yAOuEgD4" },
+                { "title": "785 Niagara Falls Blvd", "address1": "785 Niagara Falls Blvd", "address2": "Amherst, NY 14226, USA", "coords": { "lat": 42.97546328220374, "lng": -78.82249182579498 }, "placeId": "ChIJr3-SEmJy04kR25Le4K6Gd5U" },
+                { "title": "1 Flint Rd", "address1": "1 Flint Rd", "address2": "Buffalo, NY 14226, USA", "coords": { "lat": 42.99045159423194, "lng": -78.79072655886077 }, "placeId": "ChIJr9vGfLVz04kRrYPq-WSZZHs" },
+                { "title": "4414 Southwestern Blvd", "address1": "4414 Southwestern Blvd", "address2": "Hamburg, NY 14075, USA", "coords": { "lat": 42.764932642121316, "lng": -78.82345716627043 }, "placeId": "ChIJWX34D0cF04kRUkpxzXmdXFQ" },
+                { "title": "3940 Southwestern Blvd", "address1": "3940 Southwestern Blvd", "address2": "Orchard Park, NY 14127, USA", "coords": { "lat": 42.77682530519221, "lng": -78.79387223372954 }, "placeId": "ChIJqfVTmX8F04kRZVGgztyMcic" },
+                { "title": "9159 Erie Rd", "address1": "9159 Erie Rd", "address2": "Angola, NY 14006, USA", "coords": { "lat": 42.635145598940746, "lng": -79.0494032509262 }, "placeId": "ChIJZcoEzZbf0okRpt8ACPljhY8" },
+                { "title": "7592 US-20", "address1": "7592 US-20", "address2": "Westfield, NY 14787, USA", "coords": { "lat": 42.33669479989578, "lng": -79.55417987976227 }, "placeId": "ChIJI_X6ZptILYgRxIgmlTtZYTI" },
+                { "title": "620 Fairmount Ave", "address1": "620 Fairmount Ave", "address2": "Jamestown, NY 14701, USA", "coords": { "lat": 42.09767575688613, "lng": -79.27518150674591 }, "placeId": "ChIJC_CBJm6p0okRsaJe9wwHDtU" },
+                { "title": "3234 NY-417", "address1": "3234 NY-417", "address2": "Olean, NY 14760, USA", "coords": { "lat": 42.079766495880655, "lng": -78.47709497916794 }, "placeId": "ChIJX0NtXHh60okRrMd69LtH5xs" },
+                { "title": "11368 Maple Ridge Rd", "address1": "11368 Maple Ridge Rd", "address2": "Medina, NY 14103, USA", "coords": { "lat": 43.20689369704575, "lng": -78.388527828207 }, "placeId": "ChIJmxbNYAZ21IkR2oMd4zRl6eY" },
+                { "title": "1273 Chili Ave", "address1": "1273 Chili Ave", "address2": "Rochester, NY 14624, USA", "coords": { "lat": 43.13809769489417, "lng": -77.66877383558197 }, "placeId": "ChIJsxgpnEOz1okR-v4tHJNxtFw" },
+                { "title": "3990 W Henrietta Rd", "address1": "3990 W Henrietta Rd", "address2": "Rochester, NY 14623, USA", "coords": { "lat": 43.072895960227484, "lng": -77.6438247803566 }, "placeId": "ChIJA2qNYYVL0YkRCPOEJkBAvI8" },
+                { "title": "1157 NY-36", "address1": "1157 NY-36", "address2": "Hornell, NY 14843, USA", "coords": { "lat": 42.36723341575948, "lng": -77.67549853372957 }, "placeId": "ChIJZ5tnRhOa0YkR1c4Ik08obuI" },
+                { "title": "55 N Main St", "address1": "55 N Main St", "address2": "Perry, NY 14530, USA", "coords": { "lat": 42.72001708846525, "lng": -78.00129714722135 }, "placeId": "ChIJy8rCY5TZ04kRGPfgzeV9gFc" },
+                { "title": "5584 US-20A", "address1": "5584 US-20A", "address2": "Warsaw, NY 14569, USA", "coords": { "lat": 42.74545939324573, "lng": -78.1124471509262 }, "placeId": "ChIJ1bw0GCvF04kRaf1JRj0tZQE" },
+                { "title": "1980 E Main St", "address1": "1980 E Main St", "address2": "Falconer, NY 14733, USA", "coords": { "lat": 42.12748668738574, "lng": -79.19121481468049 }, "placeId": "ChIJ8cMCivql0okRvcjL_wvTGCQ" },
+                { "title": "333 W Morris St", "address1": "333 W Morris St", "address2": "Bath, NY 14810, USA", "coords": { "lat": 42.33697524049414, "lng": -77.33224682209014 }, "placeId": "ChIJcfyFzUqu0YkR66poSD9T_2w" },
+                { "title": "3325 S Main St", "address1": "3325 S Main St", "address2": "Horseheads, NY 14845, USA", "coords": { "lat": 42.15498130944904, "lng": -76.81564541600798 }, "placeId": "ChIJP3ik9XFq0IkRZOoA9dq5Whw" },
+                { "title": "871 County Rd 64", "address1": "871 County Rd 64", "address2": "Elmira, NY 14903, USA", "coords": { "lat": 42.155260461037926, "lng": -76.87907034847944 }, "placeId": "ChIJ50_mywVB0IkRx-6gsTo82iU" },
+                { "title": "200 Robert Dann Dr", "address1": "200 Robert Dann Dr", "address2": "Painted Post, NY 14870, USA", "coords": { "lat": 42.15442139682012, "lng": -77.11006067790984 }, "placeId": "ChIJfZCdmRhK0IkRYCOI_fV25Fk" },
+                { "title": "13550 W Schutt Rd", "address1": "13550 W Schutt Rd", "address2": "Chaffee, NY 14030, USA", "coords": { "lat": 42.5417801483, "lng": -78.4797163509262 }, "placeId": "ChIJcx87w3ZS0okROd1FOGiXbxA" },
+                { "title": "7463 NY-96", "address1": "7463 NY-96", "address2": "Victor, NY 14564, USA", "coords": { "lat": 43.006854301565696, "lng": -77.44532642209016 }, "placeId": "ChIJpYLNO2ox0YkRICxtH3skErA" },
+                { "title": "370 W Morris St", "address1": "370 W Morris St", "address2": "Bath, NY 14810, USA", "coords": { "lat": 42.34065785149901, "lng": -77.33506668161466 }, "placeId": "ChIJyZaBe7Ov0YkRbqsrSQzbEH8" },
+                { "title": "9050 NY-34", "address1": "9050 NY-34", "address2": "Weedsport, NY 13166, USA", "coords": { "lat": 43.05559571587862, "lng": -76.55892409140166 }, "placeId": "ChIJj8c28_JT14kRdh70tMCXUoE" },
+                { "title": "1966 NY-5", "address1": "1966 NY-5", "address2": "Seneca Falls, NY 13148, USA", "coords": { "lat": 42.902486186280086, "lng": -76.83374232023775 }, "placeId": "ChIJP0IesCXI0IkRrqmwveQSEBQ" },
+                { "title": "650 Old Front St", "address1": "650 Old Front St", "address2": "Binghamton, NY 13905, USA", "coords": { "lat": 42.124532006324905, "lng": -75.90931383928681 }, "placeId": "ChIJUQvdt43v2okR1RmqWfTXbzY" },
+                { "title": "2382 W Genesee Turnpike", "address1": "2382 W Genesee Turnpike", "address2": "Camillus, NY 13031, USA", "coords": { "lat": 43.035105763135014, "lng": -76.34321373558197 }, "placeId": "ChIJZ7QM_0L52YkR6w3RNmOUWyg" },
+                { "title": "131 Downer St", "address1": "131 Downer St", "address2": "Baldwinsville, NY 13027, USA", "coords": { "lat": 43.150535802944, "lng": -76.34470830118866 }, "placeId": "ChIJ05x-QJLk2YkRlot0lsTLWt0" },
+                { "title": "All Seasons Inn", "address1": "All Seasons Inn", "address2": "5422 NY-104, Oswego, NY 13126, USA", "coords": { "lat": 43.46614407941244, "lng": -76.42113295277863 }, "placeId": "ChIJtZAz3K_X2YkR6w_65HVz7E4" },
+                { "title": "142 Lake St", "address1": "142 Lake St", "address2": "Penn Yan, NY 14527, USA", "coords": { "lat": 42.65634454380207, "lng": -77.05469258584444 }, "placeId": "ChIJKUAMn8zl0IkRg9xWgp5d6Nk" },
+                { "title": "79 Albany St", "address1": "79 Albany St", "address2": "Cazenovia, NY 13035, USA", "coords": { "lat": 42.93007963605621, "lng": -75.85301372209015 }, "placeId": "ChIJ-ZbWowqH2YkR4920aRDstpA" },
+                { "title": "10 Church St", "address1": "10 Church St", "address2": "Cortland, NY 13045, USA", "coords": { "lat": 42.60128669465034, "lng": -76.17868901468049 }, "placeId": "ChIJWfPJVn9s2okRHES1sWB6UwY" },
+                { "title": "4 Mang Dr", "address1": "4 Mang Dr", "address2": "Sidney, NY 13838, USA", "coords": { "lat": 42.298734234398275, "lng": -75.4091255183853 }, "placeId": "ChIJT5Kd9mqh24kRcW6Kgo-EBMk" },
+                { "title": "9090 Mt Belvedere Blvd", "address1": "9090 Mt Belvedere Blvd", "address2": "Fort Drum, NY 13603, USA", "coords": { "lat": 44.032006979389685, "lng": -75.80250890080261 }, "placeId": "EjA5MDkwIE10IEJlbHZlZGVyZSBCbHZkLCBGb3J0IERydW0sIE5ZIDEzNjAzLCBVU0EiURJPCjQKMgkdVlGqBnzYiRH8xZbH44rtaRoeCxDuwe6hARoUChIJa3EhAJR-2IkRSyO80rnSOYMMEIJHKhQKEgnNbcqfrH7YiRHEGbCt0wOWEQ" },
+                { "title": "300 Washington St", "address1": "300 Washington St", "address2": "Watertown, NY 13601, USA", "coords": { "lat": 43.97181620899233, "lng": -75.91188106627044 }, "placeId": "ChIJKz4HTuNv2IkRi_reQUuqOEE" },
+                { "title": "3723 NY-13", "address1": "3723 NY-13", "address2": "Pulaski, NY 13142, USA", "coords": { "lat": 43.553516936745694, "lng": -76.11125257790984 }, "placeId": "ChIJJcqTyTU12IkRbo87j0RHEKU" },
+                { "title": "5920 Airport Rd", "address1": "5920 Airport Rd", "address2": "Oriskany, NY 13424, USA", "coords": { "lat": 43.14815550255018, "lng": -75.37819085092619 }, "placeId": "ChIJ49zyvdFq2YkRVp3fUOvBQt4" },
+                { "title": "6067 NY-12", "address1": "6067 NY-12", "address2": "Norwich, NY 13815, USA", "coords": { "lat": 42.5452276979565, "lng": -75.52565479140168 }, "placeId": "ChIJY7P4TB6424kRE_O0Wzh_f34" }
+            ],
+            "mapOptions": { "center": { "lat": 38.0, "lng": -100.0 }, "fullscreenControl": true, "mapTypeControl": false, "streetViewControl": false, "zoom": 4, "zoomControl": true, "maxZoom": 17 },
+            "mapsApiKey": "AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs"
+        };
 
-      function initMap() {
-        new LocatorPlus(CONFIGURATION);
-      }
+        function initMap() {
+            new LocatorPlus(CONFIGURATION);
+        }
     </script>
     <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
       {{#each locations}}
@@ -320,63 +320,95 @@
                     </a>
                 </div>
             </nav>
-
-
-            </navbar>
         </header>
-        <!-- header end -->
+    </div>
+    <!-- header end -->
 
-        <Main>
-            <!-- user location map -->
-            <div>
-              <div class="user-location-map">
-                  <div id="map-container">
-                      <div id="locations-panel">
-                          <div id="locations-panel-list">
-                              <header>
-                                  <h1 class="search-title">
-                                      <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
-                                      Find a location near you
-                                  </h1>
-                                  <div class="search-input">
-                                      <input id="location-search-input" placeholder="Enter your address or zip code">
-                                      <div id="search-overlay-search" class="search-input-overlay search">
-                                          <button id="location-search-button">
-                                              <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="Search"/>
-                                          </button>
-                                      </div>
-                                  </div>
-                              </header>
-                              <div class="section-name" id="location-results-section-name">
-                                  All locations
-                              </div>
-                              <div class="results">
-                                  <ul id="location-results-list"></ul>
-                              </div>
-                          </div>
-                          <div id="locations-panel-details"></div>
-                      </div>
-                      <div id="map"></div>
-                  </div>
-                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABCDE" async defer></script>
-              </div>
-              <button id="Save-Hotel">
+    <Main>
+        <!-- user location map -->
+        <div>
+            <div class="user-location-map">
+                <div id="map-container">
+                    <div id="locations-panel">
+                        <div id="locations-panel-list">
+                            <header>
+                                <h1 class="search-title">
+                                    <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg" />
+                                    Find a location near you
+                                </h1>
+                                <div class="search-input">
+                                    <input id="location-search-input" placeholder="Enter your address or zip code">
+                                    <div id="search-overlay-search" class="search-input-overlay search">
+                                        <button id="location-search-button">
+                                            <img class="icon"
+                                                src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg"
+                                                alt="Search" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="section-name" id="location-results-section-name">
+                                All locations
+                            </div>
+                            <div class="results">
+                                <ul id="location-results-list"></ul>
+                            </div>
+                        </div>
+                        <div id="locations-panel-details"></div>
+                    </div>
+                    <div id="map"></div>
+                </div>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWbTcwbud1_MoT19FcCsMYIDR8mvUolZs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABCDE"
+                    async defer></script>
+            </div>
+            <button id="Save-Hotel">
                 Save Hotel
-              </button>
-            </div>
+            </button>
+        </div>
+    </Main>
+    <!-- user location map END -->
 
-            <div class="columns">
-              <div id="card-1" class="column"></div>
-              <div id="card-2" class="column"></div>
-              <div id="card-3" class="column"></div>
-              <div id="card-4" class="column"></div>
+        <!-- Cards START -->
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="content" id="card-1">
+                      
+                    </div>
+                </div>
             </div>
-
-        </Main>
+            <div class="column">
+                <div class="card">
+                    <div class="content" id="card-2">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="content" id="card-3">
+                
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                     <div class="content" id="card-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-  <script src="./assets/javascript/script.js"></script>
+
+    
+
+
+
+    <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>
