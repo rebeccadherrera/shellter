@@ -31,12 +31,67 @@ a.navbar-item:hover {
 
 /* HEADER / NAVBAR STYLES END */
 
+.navbar-burger {
+    color: #66C9D7;
+}
+
+.navbar-burger:hover{
+    color: white;
+}
+
 /* User location map */
 .user-location-map {
-    height: 400px;
-    width: 50%;
-    border: 3px solid #024e76;
+    height: 500px;
+    width: 100%;
     margin: auto;
+}
+
+#bottom-border {
+    background-color:#352870;
+    width: 100%;
+    height: 10px;
+}
+
+#Save-Hotel {
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-color:#352870;
+    width: 100%;
+    padding: 0px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+#Save-Hotel:hover {
+    background-color:#66C9D7;
+    color: white;
+}
+
+.columns {
+    width: 85%;
+    margin-left: 5%;
+}
+
+.column {
+    margin-top: 30px;
+}
+#locations-panel-list .location-result h2.name {
+    font-size: 16pt;
+    font-weight: 700;
+    color:#66C9D7;
+}
+#locations-panel-details h2 {
+    font-size: 16pt;
+    font-weight: 700;
+}
+#locations-panel-list h1.search-title {
+    font-size: 18pt;
+    font-weight: 700;
+    color: #352870;
+}
+#Save-Hotel:hover {
+    background-color:#66C9D7;
+    color: white;
 }
 /* end  User location map */
 
@@ -47,3 +102,20 @@ a.navbar-item:hover {
 }
 
 /* END DESCRIPTION */
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+/* END FOOTER */
+
+/* cards style */
+.card {
+    background-color: #66C9D7;
+    padding: 20px;
+    color: #000;
+}
