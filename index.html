@@ -301,7 +301,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <!-- logo -->
             <div class="navbar-brand">
-                <a class="navbar-item" href="">
+                <a class="navbar-item" id="logo" href="">
                     <img src="./assets/images/logo_shellter_white.svg" alt="shellter logo" width="200" height="">
                 </a> 
                 <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
@@ -312,16 +312,16 @@
             </div>
             <!-- navbar links -->
             <div class="navbar-menu" id="navMenu">
-                <a class="navbar-item">
+                <a href="logo" class="navbar-item">
                     Home
                 </a>
                 <a class="navbar-item">
                     Search
                 </a>
-                <a class="navbar-item">
+                <a href="#resources" class="navbar-item">
                     Resources
                 </a>
-                <a class="navbar-item">
+                <a hr3ef="#contact" class="navbar-item">
                     Contact
                 </a>
             </div>
@@ -335,12 +335,15 @@
 
     <Main>
         <!-- Description -->
-        <div class="description">
-            <!-- <h1>Let Shellter Help You</h1> -->
-            <p>
-                Total number of reported domestic abuse cases in New York City in 2019: <span id='total'></span>
-            </p>
+        <div class="level description">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="title">Let us Shellter You!</p>
+                    <p class="heading">Total number of reported domestic abuse cases in New York City in 2019: <span id='total'></span></p>
+                </div>
+            </div>
         </div>
+        
       <!-- end Description -->
 
         <!-- user location map -->
@@ -430,41 +433,31 @@
 
 
     <!-- Resources footer -->
-    <footer>
-      <ol>
-          <h2>Resources: </h2>
-          <li>
-              <h3>Suicide Prevention:<br>
-                  <a href="https://omh.ny.gov/omhweb/suicide_prevention/ ">https://omh.ny.gov/omhweb/suicide_prevention/</a> 
-              </h3>
-              </li>
 
-          <li>
-              <h3>Trans Youth:</h3>
-          </li>
-
-              <li>
-                  <h3>
-                  Text HOME to 741741 to connect with a Crisis Text Line counselor via text message.<br>
-                 <a href="https://www.1800runaway.org/youth-teens"> https://www.1800runaway.org/youth-teens </a>
-                  </h3>
-              </li>
-
-
-          <li>
-              <h3>
-                  Homeless Shelters:<br>
-              <a href="https://www1.nyc.gov/site/dhs/index.page"> https://www1.nyc.gov/site/dhs/index.page</a>
-              </h3>
-          </li>
-
-          <li>
-              <h3>COVID-19:<br>
-              <a href="https://portal.311.nyc.gov/article/?kanumber=KA-03301">https://portal.311.nyc.gov/article/?kanumber=KA-03301</a>
-              </h3>
-          </li>
-      </ol>
-  </footer>
+    <footer class="footer">
+        <div class="columns">
+            <div class="column">
+                <h2 id="resources">RESOURCES</h2>
+                <h3>Suicide Prevention</h3>
+                    <a href="https://omh.ny.gov/omhweb/suicide_prevention/ ">Click here for Website</a> 
+                <br>
+                <h3>Trans Youth</h3>
+                    <a href="https://www.1800runaway.org/youth-teens"> Click here for website</a>
+                <br/>
+                <h3>Crisis Text Line Counselor </h3>
+                <p>Text HOME to 741741</p>
+                <br>
+                <h3>Homeless Shelters</h3>
+                <a href="https://www1.nyc.gov/site/dhs/index.page"> Click here for website</a>
+                <br>
+                <h3>COVID-19</h3>
+                <a href="https://portal.311.nyc.gov/article/?kanumber=KA-03301">Click here for website</a>
+                </div>
+            <div class="column">
+                <h2>CONTACT</h2>
+            </div>
+        </div>
+      </footer>
   <!-- end Resources footer -->
 
   <source src="https://data.cityofnewyork.us/resource/drss-6xix.json">
