@@ -10,10 +10,11 @@ var hotelDetails = [];
 saveHotelBtn.style.display = 'none';
 
 
-
+/* Calls displayOnCard then gets hotel details from local storage and sets new hotel to local storage. */
 var saveHotel = function() {
-    hotel = document.getElementById('locations-panel-details')
-    hotel = hotel.innerText.slice(6);
+
+    hotel = document.getElementById('locations-panel-details');
+    hotel = hotel.innerHTML.slice(1026);
     
 
     if (hotel) {
@@ -34,10 +35,10 @@ var saveHotel = function() {
     }
     else if(hotelList) {
       hotelList = JSON.parse(hotelList);
-      hotelList[3] = card4.textContent;
-      hotelList[2] = card3.textContent;
-      hotelList[1] = card2.textContent;
-      hotelList[0] = card1.textContent;
+      hotelList[3] = card4.innerHTML;
+      hotelList[2] = card3.innerHTML;
+      hotelList[1] = card2.innerHTML;
+      hotelList[0] = card1.innerHTML;
     }
     else if (hotel) {
       hotelList = [hotel];
@@ -46,13 +47,14 @@ var saveHotel = function() {
     if (hotelList) {
       localStorage.setItem("HotelList" , JSON.stringify(hotelList));
 
-      card4.textContent = hotelList[3];
-      card3.textContent = hotelList[2];
-      card2.textContent = hotelList[1];
-      card1.textContent = hotelList[0];
+      card4.innerHTML = hotelList[3];
+      card3.innerHTML = hotelList[2];
+      card2.innerHTML = hotelList[1];
+      card1.innerHTML = hotelList[0];
     }
 };
 
+/* Displays new hotel on Cards. */
 var displayOnCard = function(hotel) {
   console.log(hotel);
 
@@ -62,12 +64,13 @@ var displayOnCard = function(hotel) {
   var card4 = document.getElementById('card-4');
 
   
-  card4.textContent = card3.textContent;
-  card3.textContent = card2.textContent;
-  card2.textContent = card1.textContent;
-  card1.textContent = hotel;
+  card4.innerHTML = card3.innerHTML;
+  card3.innerHTML = card2.innerHTML;
+  card2.innerHTML = card1.innerHTML;
+  card1.innerHTML = hotel;
 };
 
+/* Hides Save button on click of back button. */
 var hideSaveBtn = function(event) {
   console.log(event);
   if ($(event.target).hasClass("back-button") || $(event.target).parent().hasClass("back-button")) {
@@ -76,6 +79,7 @@ var hideSaveBtn = function(event) {
   }
 };
 
+/* Shows Save button on click of view details button. */
 var showSaveBtn = function(event) {
   console.log(event.target);
   console.log('<button class="details-button"> View details </button>');
@@ -85,6 +89,7 @@ var showSaveBtn = function(event) {
   }
 };
 
+/* Gets info from gov api and displays select info. */
 async function getData() {
   try {
     const response = await fetch(govApi);
