@@ -72,8 +72,8 @@ a.navbar-item:hover {
 }
 
 .columns {
-    width: 85%;
-    margin-left: 5%;
+    width: ;
+    margin-left: ;
 }
 
 .column {
@@ -119,7 +119,7 @@ footer {
 }
 .footer{
     background-color: #352870;
-    text-align: left;
+    text-align: center;
     color: #fff
 }
 .footer a{
