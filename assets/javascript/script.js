@@ -63,10 +63,15 @@ var displayOnCard = function(hotel) {
   var card3 = document.getElementById('card-3');
   var card4 = document.getElementById('card-4');
 
-  
-  card4.innerHTML = card3.innerHTML;
-  card3.innerHTML = card2.innerHTML;
-  card2.innerHTML = card1.innerHTML;
+  if (card3.innerHTML) {
+    card4.innerHTML = card3.innerHTML;
+  }
+  if (card2.innerHTML){
+    card3.innerHTML = card2.innerHTML;
+  }
+  if (card1.innerHTML) {
+    card2.innerHTML = card1.innerHTML;
+  }
   card1.innerHTML = hotel;
 };
 
