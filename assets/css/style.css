@@ -1,15 +1,19 @@
-body {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+body, 
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;  
+}
+
+h4,
+h5,
+h6 {
     font-family:'Josefin Sans', sans-serif;
-  }
+    font-weight: 500;
+}
+a {
+    color: #352870;
+}
 
 .navbar{
     background-color: #352870; 
@@ -96,11 +100,14 @@ a.navbar-item:hover {
 /* end  User location map */
 
 /* DESCRIPTION */
-
-.description {
-    text-align: center;
+.level-item .subtitle, .level-item .title {
+    padding: 20px 0 10px 0;
+    margin-bottom: 0;
+    color: #352870;
 }
-
+.heading {
+    font-size: 14px
+}
 /* END DESCRIPTION */
 
 /* FOOTER */
@@ -109,6 +116,29 @@ footer {
     text-align: center;
     margin-top: 100px;
     padding-bottom: 20px;
+}
+.footer{
+    background-color: #352870;
+    text-align: left;
+    color: #fff
+}
+.footer a{
+    color:#66C9D7;
+    font-size: medium;
+}
+.footer a:hover{
+    color:#fff
+}
+
+.footer h2{
+    color:#66C9D7;
+    font-size:20pt;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.footer h3{
+    color:#fff;
+    font-weight: 600;
 }
 
 /* END FOOTER */
