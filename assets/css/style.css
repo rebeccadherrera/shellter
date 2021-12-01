@@ -1,0 +1,146 @@
+body, 
+h1,
+h2,
+h3 {
+    font-family: 'Roboto', sans-serif;  
+}
+
+h4,
+h5,
+h6 {
+    font-family:'Josefin Sans', sans-serif;
+    font-weight: 500;
+}
+a {
+    color: #352870;
+}
+
+.navbar{
+    background-color: #352870; 
+    padding: 20px;
+}
+
+.navbar-item, .navbar-link {
+    color: #fff;
+
+}
+a.navbar-item:hover {
+    background-color: #66C9D7;
+    color: #fff;
+}
+.navbar-menu.is-active{
+    background-color: #352870;
+    color: #fff;
+}
+
+/* HEADER / NAVBAR STYLES END */
+
+.navbar-burger {
+    color: #66C9D7;
+}
+
+.navbar-burger:hover{
+    color: white;
+}
+
+/* User location map */
+.user-location-map {
+    height: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+#bottom-border {
+    background-color:#352870;
+    width: 100%;
+    height: 10px;
+}
+
+#Save-Hotel {
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-color:#352870;
+    width: 100%;
+    padding: 0px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+#Save-Hotel:hover {
+    background-color:#66C9D7;
+    color: white;
+}
+
+.column {
+    margin-top: 30px;
+}
+#locations-panel-list .location-result h2.name {
+    font-size: 16pt;
+    font-weight: 700;
+    color:#66C9D7;
+}
+#locations-panel-details h2 {
+    font-size: 16pt;
+    font-weight: 700;
+}
+#locations-panel-list h1.search-title {
+    font-size: 18pt;
+    font-weight: 700;
+    color: #352870;
+}
+#Save-Hotel:hover {
+    background-color:#66C9D7;
+    color: white;
+}
+/* end  User location map */
+
+/* DESCRIPTION */
+.level-item .subtitle, .level-item .title {
+    padding: 20px 0 10px 0;
+    margin-bottom: 0;
+    color: #352870;
+}
+.heading {
+    font-size: 14px
+}
+/* END DESCRIPTION */
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+.footer{
+    background-color: #352870;
+    text-align: center;
+    color: #fff
+}
+.footer a{
+    color:#66C9D7;
+    font-size: medium;
+}
+.footer a:hover{
+    color:#fff
+}
+
+.footer h2{
+    color:#66C9D7;
+    font-size:20pt;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.footer h3{
+    color:#fff;
+    font-weight: 600;
+}
+
+/* END FOOTER */
+
+/* cards style */
+.card {
+    background-color: #66C9D7;
+    padding: 20px;
+    color: #000;
+}
