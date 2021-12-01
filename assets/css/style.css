@@ -95,6 +95,10 @@ a.navbar-item:hover {
 /* end  User location map */
 
 /* DESCRIPTION */
+.description {
+    display: block;
+}
+
 .level-item .subtitle, .level-item .title {
     padding: 20px 0 10px 0;
     margin-bottom: 0;
