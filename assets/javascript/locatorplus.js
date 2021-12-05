@@ -1,4 +1,5 @@
-
+/* This code came from google */
+/* Location of Code from google https://console.cloud.google.com/google/maps-apis/solution-builder/locator-plus?project=abstract-ring-333423 */
 
 /** Hide a DOM element. */
 function hideElement(el) {
